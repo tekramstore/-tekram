@@ -7,1166 +7,345 @@
 
 <style>
 :root{
---g:#183d30;
---g2:#244f3e;
---c:#f7f0e4;
---c2:#eee4d3;
---o:#df5035;
---gold:#e5aa45;
---w:#fffdf8;
---m:#77786f;
---b:#e5dac8
+--g:#183d30;--g2:#244f3e;--c:#f7f0e4;--c2:#eee4d3;
+--o:#df5035;--gold:#e5aa45;--w:#fffdf8;--m:#77786f;--b:#e5dac8
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Tahoma,Arial,sans-serif;
-background:var(--c);
-color:var(--g);
-line-height:1.6
-}
-
+body{font-family:Tahoma,Arial,sans-serif;background:var(--c);color:var(--g);line-height:1.6}
 button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
 
-header{
-background:var(--g);
-position:sticky;
-top:0;
-z-index:20;
-padding:0
-}
-
-.head{
-position:relative;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
-.site-logo{
-width:100%;
-height:auto;
-max-height:110px;
-display:block;
-object-fit:contain
-}
-
-.logo-home{
-position:absolute;
-inset:0;
-z-index:1;
-display:block
-}
-
-.icons{
-display:flex;
-gap:8px;
-position:absolute;
-z-index:3;
-top:12px
-}
-
-.icons:first-child{right:5%}
-.icons:last-child{left:5%}
-
+/* HEADER */
+header{background:var(--g);position:sticky;top:0;z-index:20}
+.head{position:relative;width:100%;display:flex;justify-content:center;align-items:center}
+.site-logo{width:100%;height:auto;max-height:105px;object-fit:contain}
+.logo-home{position:absolute;inset:0;z-index:1}
+.icons{display:flex;gap:8px;position:absolute;z-index:3;top:12px}
+.icons:first-of-type{right:5%}
+.icons:last-of-type{left:5%}
 .icon{
-width:45px;
-height:45px;
-border:0;
-border-radius:50%;
-background:var(--w);
-color:var(--g);
-font-size:20px
+width:44px;height:44px;border:0;border-radius:50%;
+background:var(--w);color:var(--g);font-size:19px
 }
-
 .cart-top{position:relative}
-
 .count{
-position:absolute;
-top:-4px;
-right:-3px;
-background:var(--o);
-color:#fff;
-border-radius:20px;
-padding:1px 6px;
-font-size:10px
+position:absolute;top:-4px;right:-3px;background:var(--o);
+color:#fff;border-radius:20px;padding:1px 6px;font-size:10px
 }
 
-.search-wrap{
-background:var(--g);
-padding:0 5% 20px
-}
-
+.search-wrap{background:var(--g);padding:0 5% 18px}
 .search{
-max-width:1250px;
-margin:auto;
-background:var(--w);
-height:50px;
-border-radius:30px;
-display:flex;
-align-items:center;
-padding:0 18px;
-gap:8px
+max-width:1250px;margin:auto;background:var(--w);height:48px;
+border-radius:30px;display:flex;align-items:center;padding:0 18px;gap:8px
 }
+.search input{width:100%;border:0;outline:0;background:none;font-size:14px}
 
-.search input{
-width:100%;
-border:0;
-outline:0;
-background:none;
-font-size:14px
-}
-
-/* ================= HERO ================= */
-
-.hero-wrap{
-padding:22px 5% 25px
-}
-
+/* HERO */
+.hero-wrap{padding:25px 5%}
 .hero{
-max-width:1250px;
-margin:auto;
-height:330px;
-background:var(--g);
-border-radius:30px;
-color:#fff;
-position:relative;
-overflow:hidden;
-display:flex;
-align-items:center
+max-width:1250px;margin:auto;min-height:310px;
+background:var(--g);border-radius:28px;color:#fff;
+display:flex;align-items:center;justify-content:space-between;
+padding:45px 8%;position:relative;overflow:hidden
 }
-
-.hero:before{
-content:"";
-position:absolute;
-width:480px;
-height:480px;
-border:55px solid #244f3e;
-border-radius:50%;
-right:-170px;
-top:-280px
-}
-
 .hero:after{
-content:"";
-position:absolute;
-width:650px;
-height:190px;
-background:#244f3e;
-border-radius:50%;
-left:-180px;
-bottom:-125px;
-transform:rotate(10deg);
-opacity:.8
+content:"";position:absolute;width:420px;height:420px;
+border:1px solid #ffffff12;border-radius:50%;
+left:-170px;bottom:-250px
 }
-
-.hero-decor{
-position:absolute;
-right:8%;
-top:25px;
-font-size:32px;
-color:var(--gold);
-z-index:2
-}
-
-.hero-text{
-position:relative;
-z-index:5;
-padding:30px 6%;
-width:58%
-}
-
-.hero-small{
-color:var(--gold);
-font-size:13px;
-font-weight:bold;
-margin-bottom:5px
-}
-
+.hero-text{position:relative;z-index:2;max-width:680px}
+.hero-small{color:var(--gold);font-weight:bold;font-size:14px}
 .hero h1{
-font-size:clamp(32px,4.5vw,54px);
-line-height:1.15;
-margin:5px 0 12px;
-font-weight:900
+font-size:clamp(38px,6vw,60px);
+line-height:1.12;margin:10px 0 15px
 }
-
-.hero h1 span{
-display:block;
-color:#f4b04b
-}
-
-.hero p{
-color:#eee;
-font-size:13px;
-margin-bottom:17px;
-max-width:430px
-}
-
+.hero h1 span{color:#f4b04b}
+.hero p{color:#eee;font-size:14px;margin-bottom:20px}
 .hero button{
-border:0;
-background:var(--o);
-color:#fff;
-padding:11px 22px;
-border-radius:25px;
-font-weight:bold;
-font-size:13px
+border:0;background:var(--o);color:#fff;
+padding:12px 24px;border-radius:25px;font-weight:bold
+}
+.hero-branch{
+font-size:90px;opacity:.9;transform:rotate(-12deg);
+color:var(--gold);margin-left:15px
 }
 
-.hero-products{
-position:absolute;
-left:5%;
-bottom:25px;
-width:300px;
-height:190px;
-z-index:4
-}
+/* PRODUCTS */
+.section{max-width:1250px;margin:auto;padding:25px 5% 120px}
+.title{margin-bottom:18px}
+.line{width:42px;height:3px;background:var(--g);margin-bottom:9px}
+.title h2{font-size:29px}
+.title p{color:var(--m);font-size:13px}
 
-.hero-product{
-position:absolute;
-width:105px;
-height:125px;
-background:#fffdf8;
-border-radius:18px;
-padding:8px;
-box-shadow:0 10px 25px #0003;
-display:flex;
-align-items:center;
-justify-content:center
-}
-
-.hero-product img{
-width:100%;
-height:100%;
-object-fit:contain
-}
-
-.hp1{
-left:0;
-bottom:0;
-transform:rotate(-7deg)
-}
-
-.hp2{
-left:85px;
-bottom:35px;
-z-index:2;
-transform:rotate(3deg)
-}
-
-.hp3{
-left:170px;
-bottom:0;
-z-index:1;
-transform:rotate(7deg)
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-max-width:1250px;
-margin:auto;
-padding:25px 5% 120px
-}
-
-.title{margin-bottom:20px}
-
-.line{
-width:45px;
-height:3px;
-background:var(--g);
-margin-bottom:10px
-}
-
-.title h2{font-size:30px}
-
-.title p{
-color:var(--m);
-font-size:13px
-}
-
-.categories{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
-margin-bottom:20px
-}
-
+.categories{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
 .categories button{
-border:1px solid var(--b);
-background:var(--w);
-color:var(--g);
-padding:8px 14px;
-border-radius:20px;
-font-size:11px;
-font-weight:bold
+border:1px solid var(--b);background:var(--w);color:var(--g);
+padding:8px 14px;border-radius:20px;font-size:11px;font-weight:bold
 }
-
-.categories .active{
-background:var(--g);
-color:#fff
-}
+.categories .active{background:var(--g);color:#fff}
 
 .grid,.offer-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px
+display:grid;grid-template-columns:repeat(4,1fr);gap:14px
 }
-
 .card,.offer-card{
-position:relative;
-background:#fffdf8;
-border:1px solid var(--b);
-border-radius:20px;
-overflow:hidden;
-cursor:pointer;
+position:relative;background:var(--w);border:1px solid var(--b);
+border-radius:20px;overflow:hidden;cursor:pointer;
 transition:.2s
 }
-
-.card:hover{transform:translateY(-4px)}
-
+.card:hover{transform:translateY(-3px)}
 .pic{
-margin:9px;
-aspect-ratio:1;
-background:#eee5d6;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-font-size:65px
+margin:9px;aspect-ratio:1;background:#eee5d6;border-radius:15px;
+display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:65px
 }
-
-.pic img{
-width:100%;
-height:100%;
-object-fit:contain
-}
-
-.info{
-padding:7px 12px 14px
-}
-
+.pic img{width:100%;height:100%;object-fit:contain}
+.info{padding:7px 12px 14px}
 .badge,.offer-badge{
-display:inline-block;
-padding:3px 8px;
-border-radius:15px;
-font-size:9px;
-font-weight:bold
+display:inline-block;padding:3px 8px;border-radius:15px;
+font-size:9px;font-weight:bold
 }
-
-.badge{
-background:#f3c97d;
-color:#5c3f17
-}
-
-.offer-badge{
-background:var(--o);
-color:#fff;
-margin-right:4px
-}
-
-.name{
-font-size:14px;
-font-weight:bold;
-margin-top:5px
-}
-
-.en{
-font-size:9px;
-color:var(--m)
-}
-
-.weight{
-font-size:10px;
-color:#555;
-margin-top:3px
-}
-
+.badge{background:#f3c97d;color:#5c3f17}
+.offer-badge{background:var(--o);color:#fff;margin-right:4px}
+.name{font-size:14px;font-weight:bold;margin-top:5px}
+.en{font-size:9px;color:var(--m)}
+.weight{font-size:10px;color:#555;margin-top:3px}
 .bottom{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-top:10px
+display:flex;align-items:center;justify-content:space-between;margin-top:10px
 }
-
-.price{
-font-size:18px;
-font-weight:bold;
-direction:ltr
-}
-
+.price,.new-price{font-size:18px;font-weight:bold;direction:ltr}
 .old-price{
-font-size:11px;
-color:#999;
-text-decoration:line-through;
-margin-left:5px;
-direction:ltr
+font-size:11px;color:#999;text-decoration:line-through;
+margin-left:5px;direction:ltr
 }
-
-.new-price{
-font-size:18px;
-font-weight:bold;
-color:var(--o);
-direction:ltr
-}
-
-.discount{
-font-size:9px;
-font-weight:bold;
-color:var(--o);
-margin-right:5px
-}
-
+.new-price{color:var(--o)}
+.discount{font-size:9px;font-weight:bold;color:var(--o);margin-right:5px}
 .add{
-width:35px;
-height:35px;
-border:0;
-border-radius:50%;
-background:var(--g);
-color:#fff
+width:35px;height:35px;border:0;border-radius:50%;
+background:var(--g);color:#fff
 }
-
 .fav{
-position:absolute;
-top:15px;
-left:15px;
-z-index:3;
-width:34px;
-height:34px;
-border:0;
-border-radius:50%;
-background:#fffdf8ee;
-color:var(--g);
-font-size:19px;
+position:absolute;top:15px;left:15px;z-index:3;
+width:34px;height:34px;border:0;border-radius:50%;
+background:#fffdf8ee;color:var(--g);font-size:19px;
 box-shadow:0 2px 8px #0002
 }
-
 .fav.on{color:var(--o)}
+.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--m)}
 
-.empty{
-grid-column:1/-1;
-text-align:center;
-padding:50px;
-color:var(--m)
-}
-
-/* ================= OFFERS ================= */
-
+/* OFFERS */
 #offersSection{
-display:none;
-max-width:1250px;
-margin:auto;
-padding:0 5% 20px
+display:none;max-width:1250px;margin:auto;padding:0 5% 20px
 }
-
 .offer-title{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:15px
+display:flex;align-items:center;justify-content:space-between;margin-bottom:15px
 }
-
 .offer-title h2{font-size:26px}
-
-.offer-title span{
-font-size:12px;
-color:var(--m)
-}
-
+.offer-title span{font-size:12px;color:var(--m)}
 .offer-card .pic{margin:9px}
-
-.offer-card .info{
-padding:7px 12px 15px
-}
-
+.offer-card .info{padding:7px 12px 15px}
 .offer-label{
-position:absolute;
-top:15px;
-right:15px;
-background:var(--o);
-color:#fff;
-padding:5px 10px;
-border-radius:20px;
-font-size:10px;
-font-weight:bold;
-z-index:2
+position:absolute;top:15px;right:15px;background:var(--o);color:#fff;
+padding:5px 10px;border-radius:20px;font-size:10px;font-weight:bold;z-index:2
 }
 
-/* ================= PRODUCT PAGE ================= */
-
-#productPage{
-display:none;
-padding:30px 5% 120px
-}
-
+/* PRODUCT PAGE */
+#productPage{display:none;padding:30px 5% 120px}
 .detail{
-max-width:1000px;
-margin:auto;
-background:var(--w);
-border-radius:25px;
-overflow:hidden;
-display:grid;
-grid-template-columns:1fr 1fr
+max-width:1000px;margin:auto;background:var(--w);border-radius:25px;
+overflow:hidden;display:grid;grid-template-columns:1fr 1fr
 }
-
 .detail-img{
-min-height:430px;
-background:#eee5d6;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:130px
+min-height:430px;background:#eee5d6;
+display:flex;align-items:center;justify-content:center;font-size:130px
 }
-
-.detail-img img{
-width:100%;
-height:100%;
-min-height:430px;
-object-fit:contain
-}
-
+.detail-img img{width:100%;height:100%;min-height:430px;object-fit:contain}
 .detail-info{
-padding:40px;
-display:flex;
-flex-direction:column;
-justify-content:center
+padding:40px;display:flex;flex-direction:column;justify-content:center
 }
-
-.detail-cat{
-color:var(--o);
-font-size:12px;
-font-weight:bold
-}
-
-.detail-name{
-font-size:32px;
-font-weight:bold
-}
-
-.detail-en{
-color:var(--m);
-font-size:12px
-}
-
-.options{
-display:flex;
-gap:7px;
-flex-wrap:wrap;
-margin:18px 0
-}
-
+.detail-cat{color:var(--o);font-size:12px;font-weight:bold}
+.detail-name{font-size:32px;font-weight:bold}
+.detail-en{color:var(--m);font-size:12px}
+.options{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}
 .option{
-border:1px solid var(--g);
-background:none;
-color:var(--g);
-padding:8px 13px;
-border-radius:10px;
-font-weight:bold
+border:1px solid var(--g);background:none;color:var(--g);
+padding:8px 13px;border-radius:10px;font-weight:bold
 }
-
-.option.sel{
-background:var(--g);
-color:#fff
-}
-
-.detail-price{
-font-size:30px;
-font-weight:bold;
-direction:ltr
-}
-
+.option.sel{background:var(--g);color:#fff}
+.detail-price{font-size:30px;font-weight:bold;direction:ltr}
 .detail-old-price{
-font-size:15px;
-color:#999;
-text-decoration:line-through;
-direction:ltr;
-margin-bottom:2px
+font-size:15px;color:#999;text-decoration:line-through;direction:ltr
 }
-
-.detail-desc{
-font-size:13px;
-color:#59625b;
-margin:10px 0 18px
-}
-
+.detail-desc{font-size:13px;color:#59625b;margin:10px 0 18px}
 .detail-add,.back{
-border:0;
-padding:13px;
-border-radius:13px;
-font-weight:bold;
-font-size:15px
+border:0;padding:13px;border-radius:13px;font-weight:bold;font-size:15px
 }
+.detail-add{background:var(--o);color:#fff}
+.back{background:var(--g);color:#fff;margin-top:8px}
 
-.detail-add{
-background:var(--o);
-color:#fff
-}
-
-.back{
-background:var(--g);
-color:#fff;
-margin-top:8px
-}
-
-/* ================= BOTTOM NAV ================= */
-
+/* BOTTOM NAV */
 .bottom-nav{
-position:fixed;
-z-index:50;
-bottom:14px;
-left:50%;
-transform:translateX(-50%);
-width:min(850px,94%);
-background:#fffdf8ee;
-backdrop-filter:blur(10px);
-border:1px solid var(--b);
-border-radius:30px;
-padding:8px 15px;
-display:flex;
-justify-content:space-around;
-box-shadow:0 8px 30px #0002
+position:fixed;z-index:50;bottom:14px;left:50%;
+transform:translateX(-50%);width:min(850px,94%);
+background:#fffdf8ee;backdrop-filter:blur(10px);
+border:1px solid var(--b);border-radius:30px;padding:8px 15px;
+display:flex;justify-content:space-around;box-shadow:0 8px 30px #0002
 }
-
 .bottom-nav button{
-border:0;
-background:none;
-color:var(--m);
-font-size:10px;
-font-weight:bold
+border:0;background:none;color:var(--m);
+font-size:10px;font-weight:bold
 }
-
-.bottom-nav span{
-display:block;
-font-size:21px
-}
-
+.bottom-nav span{display:block;font-size:21px}
 .bottom-nav .active{color:var(--o)}
 
-/* ================= PANELS ================= */
-
+/* PANELS */
 .overlay{
-display:none;
-position:fixed;
-inset:0;
-background:#0006;
-z-index:100
+display:none;position:fixed;inset:0;background:#0006;z-index:100
 }
-
 .panel,.menu-panel{
-position:fixed;
-z-index:101;
-top:0;
-height:100vh;
-background:var(--w);
-transition:.3s;
-display:flex;
-flex-direction:column
+position:fixed;z-index:101;top:0;height:100vh;
+background:var(--w);transition:.3s;display:flex;flex-direction:column
 }
-
-.panel{
-right:-430px;
-width:410px;
-max-width:94%
-}
-
+.panel{right:-430px;width:410px;max-width:94%}
 .menu-panel{
-left:-430px;
-width:360px;
-max-width:90%;
-box-shadow:8px 0 30px #0002
+left:-430px;width:360px;max-width:90%;box-shadow:8px 0 30px #0002
 }
 
-/* ================= OPTION MODAL ================= */
-
+/* OPTION */
 .option-modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0006;
-z-index:200;
-align-items:center;
-justify-content:center;
-padding:20px
+display:none;position:fixed;inset:0;background:#0006;z-index:200;
+align-items:center;justify-content:center;padding:20px
 }
-
 .option-box{
-width:min(420px,100%);
-background:var(--w);
-border-radius:22px;
-padding:25px 20px;
-position:relative;
-box-shadow:0 15px 50px #0004
+width:min(420px,100%);background:var(--w);
+border-radius:22px;padding:25px 20px;position:relative
 }
-
 .option-close{
-position:absolute;
-left:15px;
-top:15px;
-width:34px;
-height:34px;
-border:0;
-border-radius:10px;
-background:var(--c2);
-color:var(--g);
-font-size:21px
+position:absolute;left:15px;top:15px;width:34px;height:34px;
+border:0;border-radius:10px;background:var(--c2);color:var(--g);font-size:21px
 }
-
-.option-box h3{
-font-size:20px;
-margin-bottom:3px;
-padding-left:45px
-}
-
-.option-box p{
-font-size:12px;
-color:var(--m);
-margin-bottom:16px
-}
-
-.option-choices{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:9px
-}
-
+.option-box h3{font-size:20px;margin-bottom:3px;padding-left:45px}
+.option-box p{font-size:12px;color:var(--m);margin-bottom:16px}
+.option-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .pick-option{
-border:1px solid var(--b);
-background:var(--c);
-color:var(--g);
-padding:12px 8px;
-border-radius:12px;
-font-weight:bold
+border:1px solid var(--b);background:var(--c);color:var(--g);
+padding:12px 8px;border-radius:12px;font-weight:bold
 }
+.pick-option small{display:block;color:var(--o);font-size:11px;margin-top:2px}
 
-.pick-option small{
-display:block;
-color:var(--o);
-font-size:11px;
-margin-top:2px
-}
-
-.pick-option:active{
-background:var(--g);
-color:#fff
-}
-
-/* ================= MENU ================= */
-
+/* MENU */
 .menu-head{
-padding:22px 18px;
-background:var(--g);
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:space-between
+padding:22px 18px;background:var(--g);color:#fff;
+display:flex;align-items:center;justify-content:space-between
 }
-
-.menu-brand{
-font:900 25px Georgia
-}
-
-.menu-brand small{
-display:block;
-font:11px Tahoma;
-color:var(--gold);
-font-weight:normal
-}
-
-.menu-close{
-border:0;
-background:none;
-color:#fff;
-font-size:30px
-}
-
+.menu-brand{font:900 25px Georgia}
+.menu-brand small{display:block;font:11px Tahoma;color:var(--gold)}
+.menu-close{border:0;background:none;color:#fff;font-size:30px}
 .menu-body{padding:14px}
-
 .menu-btn{
-width:100%;
-border:0;
-background:none;
-display:flex;
-align-items:center;
-gap:13px;
-padding:15px 13px;
-border-radius:14px;
-color:var(--g);
-font-size:14px;
-font-weight:bold;
-text-align:right;
-margin-bottom:4px
+width:100%;border:0;background:none;display:flex;align-items:center;
+gap:13px;padding:15px 13px;border-radius:14px;color:var(--g);
+font-size:14px;font-weight:bold;text-align:right;margin-bottom:4px
 }
-
 .menu-btn:hover{background:var(--c)}
-
 .menu-icon{
-width:36px;
-height:36px;
-border-radius:11px;
-background:var(--c2);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:19px
+width:36px;height:36px;border-radius:11px;background:var(--c2);
+display:flex;align-items:center;justify-content:center;font-size:19px
 }
-
-.menu-divider{
-height:1px;
-background:var(--b);
-margin:10px 5px
-}
-
+.menu-divider{height:1px;background:var(--b);margin:10px 5px}
 .menu-note{
-padding:15px;
-margin-top:10px;
-background:var(--c);
-border-radius:15px;
-font-size:11px;
-color:var(--m);
-text-align:center
+padding:15px;margin-top:10px;background:var(--c);
+border-radius:15px;font-size:11px;color:var(--m);text-align:center
 }
 
-/* ================= CART ================= */
-
+/* CART */
 .panel-head{
-padding:18px;
-border-bottom:1px solid var(--b);
-display:flex;
-justify-content:space-between
+padding:18px;border-bottom:1px solid var(--b);
+display:flex;justify-content:space-between
 }
-
 .close{
-border:0;
-background:var(--c2);
-border-radius:10px;
-width:36px;
-height:36px;
-font-size:20px
+border:0;background:var(--c2);border-radius:10px;width:36px;height:36px;font-size:20px
 }
-
-.panel-body{
-flex:1;
-overflow:auto;
-padding:18px
-}
-
-.cart-item{
-padding:15px 0;
-border-bottom:1px solid var(--b)
-}
-
-.cart-row{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:12px
-}
-
-.cart-name{
-font-size:14px;
-font-weight:bold
-}
-
-.cart-option{
-display:block;
-color:var(--m);
-font-size:11px
-}
-
-.cart-price{
-color:var(--o);
-direction:ltr;
-font-size:15px
-}
-
-.controls{
-display:flex;
-align-items:center;
-gap:10px;
-margin-top:10px
-}
-
+.panel-body{flex:1;overflow:auto;padding:18px}
+.cart-item{padding:15px 0;border-bottom:1px solid var(--b)}
+.cart-row{display:flex;justify-content:space-between;gap:12px}
+.cart-name{font-size:14px;font-weight:bold}
+.cart-option{display:block;color:var(--m);font-size:11px}
+.cart-price{color:var(--o);direction:ltr;font-size:15px}
+.controls{display:flex;align-items:center;gap:10px;margin-top:10px}
 .qty{
-width:32px;
-height:32px;
-border:0;
-border-radius:9px;
-background:var(--g);
-color:#fff;
-font-size:18px
+width:32px;height:32px;border:0;border-radius:9px;
+background:var(--g);color:#fff;font-size:18px
 }
-
-.qty-number{
-min-width:20px;
-text-align:center
-}
-
+.qty-number{min-width:20px;text-align:center}
 .remove{
-border:0;
-background:none;
-color:var(--o);
-margin-right:auto;
-font-size:11px;
-padding:7px
+border:0;background:none;color:var(--o);
+margin-right:auto;font-size:11px;padding:7px
 }
-
 .cart-empty{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-min-height:300px;
-text-align:center;
-color:var(--m)
+display:flex;flex-direction:column;align-items:center;
+justify-content:center;min-height:300px;text-align:center;color:var(--m)
 }
-
 .cart-empty span{font-size:50px}
-
-.panel-foot{
-padding:17px;
-border-top:1px solid var(--b);
-background:var(--w)
-}
-
+.panel-foot{padding:17px;border-top:1px solid var(--b);background:var(--w)}
 .total{
-display:flex;
-justify-content:space-between;
-font-size:19px;
-font-weight:bold;
-margin-bottom:12px
+display:flex;justify-content:space-between;
+font-size:19px;font-weight:bold;margin-bottom:12px
 }
-
 .checkout{
-width:100%;
-border:0;
-background:var(--o);
-color:#fff;
-padding:13px;
-border-radius:13px;
-font-weight:bold
+width:100%;border:0;background:var(--o);color:#fff;
+padding:13px;border-radius:13px;font-weight:bold
 }
 
-/* ================= CHECKOUT ================= */
-
+/* CHECKOUT */
 .form{margin-bottom:12px}
-
-.form label{
-font-size:12px;
-font-weight:bold
-}
-
+.form label{font-size:12px;font-weight:bold}
 .input{
-width:100%;
-border:1px solid var(--b);
-border-radius:10px;
-padding:10px;
-margin-top:4px;
-outline:0;
-background:#fff
+width:100%;border:1px solid var(--b);border-radius:10px;
+padding:10px;margin-top:4px;outline:0;background:#fff
 }
-
-.area{
-height:65px;
-resize:none
-}
-
+.area{height:65px;resize:none}
 .summary{
-background:var(--c);
-padding:12px;
-border-radius:13px;
-margin-top:12px
+background:var(--c);padding:12px;border-radius:13px;margin-top:12px
 }
-
 .summary-row{
-display:flex;
-justify-content:space-between;
-font-size:12px;
-margin-bottom:8px
+display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px
 }
-
 .final{
-border-top:1px solid var(--b);
-padding-top:10px;
-font-weight:bold;
-font-size:17px
+border-top:1px solid var(--b);padding-top:10px;
+font-weight:bold;font-size:17px
 }
-
-/* ================= FOOTER ================= */
 
 footer{
-background:var(--g);
-color:#fff;
-text-align:center;
-padding:40px 20px 110px
+background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px
 }
-
-.footer-logo{
-font:28px Georgia;
-color:var(--gold)
-}
-
-/* ================= TABLET ================= */
+.footer-logo{font:28px Georgia;color:var(--gold)}
 
 @media(max-width:900px){
-
-.grid,.offer-grid{
-grid-template-columns:repeat(3,1fr)
+.grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
 }
-
-}
-
-/* ================= MOBILE ================= */
-
 @media(max-width:650px){
-
-.site-logo{
-max-height:85px
-}
-
-.icons{
-top:8px
-}
-
-.icon{
-width:40px;
-height:40px
-}
-
-/* Hero mobile */
-
-.hero-wrap{
-padding:18px 4% 20px
-}
+.site-logo{max-height:82px}
+.icons{top:8px}
+.icon{width:40px;height:40px}
 
 .hero{
-height:310px;
-border-radius:25px;
-align-items:flex-start
+min-height:300px;padding:35px 8%;border-radius:25px
 }
-
-.hero:before{
-width:300px;
-height:300px;
-border-width:35px;
-right:-150px;
-top:-180px
-}
-
-.hero:after{
-width:420px;
-height:130px;
-left:-150px;
-bottom:-85px
-}
-
-.hero-decor{
-right:8%;
-top:18px;
-font-size:25px
-}
-
-.hero-text{
-width:100%;
-padding:27px 7% 0
-}
-
-.hero-small{
-font-size:11px;
-margin-bottom:3px
-}
-
-.hero h1{
-font-size:30px;
-line-height:1.2;
-margin:5px 0 9px
-}
-
-.hero p{
-font-size:11px;
-line-height:1.7;
-width:58%;
-margin-bottom:12px
-}
-
-.hero button{
-font-size:11px;
-padding:9px 17px
-}
-
-.hero-products{
-left:5%;
-bottom:8px;
-width:210px;
-height:105px
-}
-
-.hero-product{
-width:72px;
-height:88px;
-border-radius:13px;
-padding:5px
-}
-
-.hp1{
-left:0;
-bottom:0
-}
-
-.hp2{
-left:58px;
-bottom:18px
-}
-
-.hp3{
-left:116px;
-bottom:0
-}
-
-/* Products */
+.hero h1{font-size:38px}
+.hero p{font-size:12px}
+.hero-branch{font-size:60px}
 
 .grid,.offer-grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px
+grid-template-columns:repeat(2,1fr);gap:10px
 }
+.name{font-size:12px}
+.price,.new-price{font-size:16px}
+.add{width:32px;height:32px}
 
-.name{
-font-size:12px
-}
-
-.price,.new-price{
-font-size:16px
-}
-
-.add{
-width:32px;
-height:32px
-}
-
-/* Details */
-
-.detail{
-grid-template-columns:1fr
-}
-
-.detail-img,.detail-img img{
-min-height:300px
-}
-
-.detail-info{
-padding:25px
-}
-
-.detail-name{
-font-size:28px
-}
-
-.menu-panel{
-width:330px
-}
-
+.detail{grid-template-columns:1fr}
+.detail-img,.detail-img img{min-height:300px}
+.detail-info{padding:25px}
+.detail-name{font-size:28px}
+.menu-panel{width:330px}
 }
 </style>
 </head>
@@ -1174,14 +353,10 @@ width:330px
 <body>
 
 <header>
-
 <div class="head">
 
 <a class="logo-home" href="#" onclick="home();return false"></a>
-
-<img src="./tekram-logo.png"
-alt="تِكرَم | Tekram"
-class="site-logo">
+<img src="./tekram-logo.png" class="site-logo" alt="تِكرَم">
 
 <div class="icons">
 <button class="icon cart-top" onclick="openCart()">
@@ -1200,221 +375,124 @@ class="site-logo">
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
-<input id="search"
-placeholder="إبحث عن منتج..."
-oninput="render()">
+<input id="search" placeholder="إبحث عن منتج..." oninput="render()">
 </div>
 </div>
 
 <main id="homePage">
 
-<!-- HERO -->
-
 <section class="hero-wrap">
-
 <div class="hero">
 
-<div class="hero-decor">✦</div>
-
 <div class="hero-text">
-
-<div class="hero-small">
-✦ من بيتنا لبيتك
-</div>
+<div class="hero-small">✦ من بيتنا لبيتك</div>
 
 <h1>
-كل احتياجات بيتك
+كل احتياجاتك<br>
 <span>بمكان واحد.</span>
 </h1>
 
-<p>
-منتجات مختارة بعناية، بأسعار واضحة
-وتوصيل قريب.
-</p>
+<p>منتجاتك اليومية بأسعار واضحة وتوصيل قريب.</p>
 
-<button onclick="scrollProducts()">
-تسوّق الآن
-</button>
-
+<button onclick="scrollProducts()">تسوّق الآن</button>
 </div>
 
-<div class="hero-products">
-
-<div class="hero-product hp1">
-<img src="./najjar-coffee-no-cardamom-180g.JPG">
-</div>
-
-<div class="hero-product hp2">
-<img src="./coffee-mate-450g.JPG">
-</div>
-
-<div class="hero-product hp3">
-<img src="./Dollys-pomegranate-Molasses-420g.JPG">
-</div>
+<div class="hero-branch">🌿</div>
 
 </div>
-
-</div>
-
 </section>
-
-<!-- OFFERS -->
 
 <section id="offersSection">
-
 <div class="offer-title">
-
 <div>
-
 <div class="line"></div>
-
 <h2>🔥 عروض تِكرَم</h2>
-
 </div>
-
-<span>
-وفّر أكتر مع تِكرَم
-</span>
-
+<span>وفّر أكتر مع تِكرَم</span>
 </div>
-
 <div id="offerGrid" class="offer-grid"></div>
-
 </section>
-
-<!-- PRODUCTS -->
 
 <section class="section" id="products">
 
 <div class="title">
-
 <div class="line"></div>
-
 <h2 id="title">منتجاتنا</h2>
-
 <p id="sub">اختيارات من تِكرَم</p>
-
 </div>
 
 <div id="cats" class="categories"></div>
-
 <div id="grid" class="grid"></div>
 
 </section>
-
 </main>
 
-<!-- PRODUCT PAGE -->
-
 <section id="productPage">
-
 <div class="detail">
 
 <div id="dimg" class="detail-img"></div>
 
 <div class="detail-info">
-
 <div id="dcat" class="detail-cat"></div>
-
 <div id="dname" class="detail-name"></div>
-
 <div id="den" class="detail-en"></div>
-
 <div id="options" class="options"></div>
-
 <div id="dweight"></div>
-
 <div id="doldprice" class="detail-old-price"></div>
-
 <div id="dprice" class="detail-price"></div>
-
 <div id="ddesc" class="detail-desc"></div>
 
-<button class="detail-add" onclick="addSelected()">
-🛒 أضف للسلة
-</button>
-
-<button class="back" onclick="home()">
-← العودة
-</button>
-
+<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
+<button class="back" onclick="home()">← العودة</button>
 </div>
 
 </div>
-
 </section>
 
-<div id="overlay"
-class="overlay"
-onclick="closePanels()">
-</div>
+<div id="overlay" class="overlay" onclick="closePanels()"></div>
 
-<!-- OPTION MODAL -->
-
-<div id="optionModal"
-class="option-modal"
+<div id="optionModal" class="option-modal"
 onclick="if(event.target===this)closeOptionPicker()">
 
 <div class="option-box">
-
-<button class="option-close"
-onclick="closeOptionPicker()">×</button>
-
-<h3 id="optionTitle">
-اختاري النوع
-</h3>
-
+<button class="option-close" onclick="closeOptionPicker()">×</button>
+<h3 id="optionTitle">اختاري النوع</h3>
 <p>حدد طلبك</p>
-
-<div id="optionChoices"
-class="option-choices">
+<div id="optionChoices" class="option-choices"></div>
 </div>
 
 </div>
-
-</div>
-
-<!-- MENU -->
 
 <div id="menuPanel" class="menu-panel">
 
 <div class="menu-head">
-
 <div class="menu-brand">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </div>
-
-<button class="menu-close"
-onclick="closePanels()">×</button>
-
+<button class="menu-close" onclick="closePanels()">×</button>
 </div>
 
 <div class="menu-body">
 
 <button class="menu-btn" onclick="menuHome()">
-<span class="menu-icon">🏠</span>
-الرئيسية
+<span class="menu-icon">🏠</span>الرئيسية
 </button>
 
 <button class="menu-btn" onclick="menuProducts()">
-<span class="menu-icon">🛍️</span>
-المنتجات
+<span class="menu-icon">🛍️</span>المنتجات
 </button>
 
 <button class="menu-btn" onclick="menuOffers()">
-<span class="menu-icon">🔥</span>
-العروض
+<span class="menu-icon">🔥</span>العروض
 </button>
 
 <button class="menu-btn" onclick="menuFavorites()">
-<span class="menu-icon">❤️</span>
-المفضلة
+<span class="menu-icon">❤️</span>المفضلة
 </button>
 
 <button class="menu-btn" onclick="menuCart()">
-<span class="menu-icon">🛒</span>
-سلة المشتريات
+<span class="menu-icon">🛒</span>سلة المشتريات
 </button>
 
 <div class="menu-divider"></div>
@@ -1427,82 +505,49 @@ onclick="closePanels()">×</button>
 </div>
 </div>
 
-<!-- CART -->
-
 <div id="cartPanel" class="panel">
 
 <div class="panel-head">
-
 <h2>🛒 السلة</h2>
-
-<button class="close"
-onclick="closePanels()">×</button>
-
+<button class="close" onclick="closePanels()">×</button>
 </div>
 
 <div id="cartBody" class="panel-body"></div>
 
 <div class="panel-foot">
-
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-
-<button class="checkout"
-onclick="checkout()">
-إتمام الطلب
-</button>
-
+<button class="checkout" onclick="checkout()">إتمام الطلب</button>
 </div>
 
 </div>
-
-<!-- CHECKOUT -->
 
 <div id="checkoutPanel" class="panel">
 
 <div class="panel-head">
-
 <h2>📦 إتمام الطلب</h2>
-
-<button class="close"
-onclick="closePanels()">×</button>
-
+<button class="close" onclick="closePanels()">×</button>
 </div>
 
 <div class="panel-body">
 
 <div class="form">
-
 <label>الاسم</label>
-
-<input id="name"
-class="input"
-placeholder="اكتب اسمك">
-
+<input id="name" class="input" placeholder="اكتب اسمك">
 </div>
 
 <div class="form">
-
 <label>رقم الهاتف</label>
-
-<input id="phone"
-class="input"
-placeholder="03 123 456">
-
+<input id="phone" class="input" placeholder="03 123 456">
 </div>
 
 <div class="form">
-
 <label>المنطقة</label>
 
 <select id="area" class="input">
-
-<option value="">
-اختر منطقة التوصيل
-</option>
-
+<option value="">اختر منطقة التوصيل</option>
 <option>صور</option>
 <option>المعشوق</option>
 <option>برج الشمالي</option>
@@ -1510,382 +555,196 @@ placeholder="03 123 456">
 <option>الحوش</option>
 <option>العباسية</option>
 <option>البازورية</option>
-
 </select>
 
 </div>
 
 <div class="form">
-
 <label>العنوان</label>
-
-<textarea id="address"
-class="input area"
+<textarea id="address" class="input area"
 placeholder="اكتب العنوان"></textarea>
-
 </div>
 
 <div class="form">
-
 <label>ملاحظات</label>
-
-<textarea id="notes"
-class="input area"
+<textarea id="notes" class="input area"
 placeholder="اختياري"></textarea>
-
 </div>
 
-<div id="summary"
-class="summary">
-</div>
+<div id="summary" class="summary"></div>
 
 </div>
 
 <div class="panel-foot">
-
-<button id="send"
-class="checkout"
-onclick="sendOrder()">
+<button id="send" class="checkout" onclick="sendOrder()">
 تأكيد الطلب ✓
 </button>
-
 </div>
 
 </div>
-
-<!-- BOTTOM NAV -->
 
 <div class="bottom-nav">
 
 <button onclick="home()" class="active">
-<span>⌂</span>
-الرئيسية
+<span>⌂</span>الرئيسية
 </button>
 
 <button onclick="categoriesPage()">
-<span>▦</span>
-الأقسام
+<span>▦</span>الأقسام
 </button>
 
 <button onclick="favoritesPage()">
-<span>♡</span>
-المفضلة
+<span>♡</span>المفضلة
 </button>
 
 <button onclick="openCart()">
-<span>🛒</span>
-السلة
+<span>🛒</span>السلة
 </button>
 
 </div>
 
 <footer>
-
-<div class="footer-logo">
-تِكرَم
-</div>
-
-<p>
-من بيتنا لبيتك 🤍
-</p>
-
+<div class="footer-logo">تِكرَم</div>
+<p>من بيتنا لبيتك 🤍</p>
 </footer>
 
 <script>
-
-const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",
-DELIVERY=2;
+const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",DELIVERY=2;
 
 const cats=[
-"الكل",
-"مشروبات",
-"ألبان وأجبان",
-"مواد غذائية",
-"مواد تنظيف",
-"بلاستيك",
-"عناية شخصية"
+"الكل","مشروبات","ألبان وأجبان","مواد غذائية",
+"مواد تنظيف","بلاستيك","عناية شخصية"
 ];
 
 const products=[
 
-{
-id:"coffee-no",
-cat:"مشروبات",
-name:"قهوة نجار دون هال",
-en:"Najjar Coffee No Cardamom",
-price:3.35,
-weight:"180 غ / 450 غ",
-img:"./najjar-coffee-no-cardamom-180g.JPG",
+{id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",
+price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",
 options:[
 ["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],
 ["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]
-]
-},
+]},
 
-{
-id:"coffee-card",
-cat:"مشروبات",
-name:"قهوة نجار مع هال",
-en:"Najjar Coffee with Cardamom",
-price:3.55,
-weight:"180 غ / 450 غ",
-img:"./najjar-coffee-with-cardamom-180g.JPG",
+{id:"coffee-card",cat:"مشروبات",name:"قهوة نجار مع هال",en:"Najjar Coffee with Cardamom",
+price:3.55,weight:"180 غ / 450 غ",img:"./najjar-coffee-with-cardamom-180g.JPG",
 options:[
 ["180 غ",3.55,"./najjar-coffee-with-cardamom-180g.JPG"],
 ["450 غ",7.35,"./najjar-coffee-with-cardamom-450g.JPG"]
-]
-},
+]},
 
-{
-id:"coffeemate",
-cat:"مشروبات",
-name:"كريمر كوفي ميت",
-en:"Coffee Mate",
-price:2.5,
-weight:"450 غ / 1 كغ",
-img:"./coffee-mate-450g.JPG",
+{id:"coffeemate",cat:"مشروبات",name:"كريمر كوفي ميت",en:"Coffee Mate",
+price:2.5,weight:"450 غ / 1 كغ",img:"./coffee-mate-450g.JPG",
 options:[
 ["450 غ",2.5,"./coffee-mate-450g.JPG"],
 ["1 كغ",6,"./Coffee-mate-1kg.JPG"]
-]
-},
+]},
 
-{
-id:"ghazal",
-cat:"ألبان وأجبان",
-name:"جبنة الغزال",
-en:"Al Ghazal Cheese",
-price:3,
-weight:"370 غ / 1.5 كغ",
-img:"./Ghazal-cheese-370g.png",
+{id:"ghazal",cat:"ألبان وأجبان",name:"جبنة الغزال",en:"Al Ghazal Cheese",
+price:3,weight:"370 غ / 1.5 كغ",img:"./Ghazal-cheese-370g.png",
 options:[
 ["370 غ",3,"./Ghazal-cheese-370g.png"],
 ["1.5 كغ",11.5,""]
-]
-},
+]},
 
-{
-id:"greek",
-cat:"ألبان وأجبان",
-name:"يوغرت تعنايل غريك",
-en:"Taanayel Greek Yogurt",
-price:1.25,
-weight:"سادة / فريز / توت / دراق",
+{id:"greek",cat:"ألبان وأجبان",name:"يوغرت تعنايل غريك",en:"Taanayel Greek Yogurt",
+price:1.25,weight:"سادة / فريز / توت / دراق",
 img:"./Taanyel-greek-yogurt-strawberry.JPG",
 options:[
 ["سادة",1.25,"./Taanyel-greek-yogurt-plain.JPG"],
 ["فريز",1.25,"./Taanyel-greek-yogurt-strawberry.JPG"],
 ["توت",1.25,"./Taanyel-greek-yogurt-bluberry.JPG"]
-]
-},
+]},
 
-{
-id:"corn",
-cat:"مواد غذائية",
-name:"ذرة حلوة لا بيلا",
-en:"La Bella Sweet Corn",
-price:.85,
-weight:"340 غ",
-img:"./la-bella-sweet-corn-340g.JPG"
-},
+{id:"corn",cat:"مواد غذائية",name:"ذرة حلوة لا بيلا",en:"La Bella Sweet Corn",
+price:.85,weight:"340 غ",img:"./la-bella-sweet-corn-340g.JPG"},
 
-{
-id:"red",
-cat:"مشروبات",
-name:"نجار نسكافيه الأحمر",
-en:"Najjar Red",
-price:3,
-weight:"95 غ / 190 غ",
-img:"./najjar-red-95g.JPG",
+{id:"red",cat:"مشروبات",name:"نجار نسكافيه الأحمر",en:"Najjar Red",
+price:3,weight:"95 غ / 190 غ",img:"./najjar-red-95g.JPG",
 options:[
 ["95 غ",3,"./najjar-red-95g.JPG"],
 ["190 غ",4.9,"./najjar-red-190g.JPG"]
-]
-},
+]},
 
-{
-id:"picon",
-cat:"ألبان وأجبان",
-name:"بيكون جبنة",
-en:"Picon Cheese",
-price:2.5,
-weight:"×16 / ×24",
-img:"./Picon-cheese-*16.JPG",
+{id:"picon",cat:"ألبان وأجبان",name:"بيكون جبنة",en:"Picon Cheese",
+price:2.5,weight:"×16 / ×24",img:"./Picon-cheese-*16.JPG",
 options:[
 ["×16",2.5,"./Picon-cheese-*16.JPG"],
 ["×24",3,"./Picon-cheese-*24.JPG"]
-]
-},
+]},
 
-{
-id:"picon8",
-cat:"ألبان وأجبان",
-name:"بيكون سِمبلي ×8",
-en:"Picon Cheese Simply ×8",
-price:.9,
-weight:"×8",
-img:"./Picon-cheese-simply-*8.JPG"
-},
+{id:"picon8",cat:"ألبان وأجبان",name:"بيكون سِمبلي ×8",
+en:"Picon Cheese Simply ×8",price:.9,weight:"×8",
+img:"./Picon-cheese-simply-*8.JPG"},
 
-{
-id:"trobika",
-cat:"مشروبات",
-name:"تروبيكا كابتشينو",
-en:"Trobika Cappuccino 20+2",
-price:4.55,
-weight:"20 + 2",
-img:"./Trobika-Cappuccino-20+2.JPG"
-},
+{id:"trobika",cat:"مشروبات",name:"تروبيكا كابتشينو",
+en:"Trobika Cappuccino 20+2",price:4.55,weight:"20 + 2",
+img:"./Trobika-Cappuccino-20+2.JPG"},
 
-{
-id:"nescafe",
-cat:"مشروبات",
-name:"نسكافيه كلاسيك 2 في 1",
-en:"Nescafé Classic 2 in 1",
-price:5.25,
-weight:"2 in 1",
-img:"./Nescafe-classic—2in1.JPG"
-},
+{id:"nescafe",cat:"مشروبات",name:"نسكافيه كلاسيك 2 في 1",
+en:"Nescafé Classic 2 in 1",price:5.25,weight:"2 in 1",
+img:"./Nescafe-classic—2in1.JPG"},
 
-{
-id:"cream",
-cat:"ألبان وأجبان",
-name:"كريمة طبخ نيو بارك",
-en:"New Park Cooking Cream",
-price:1,
-weight:"160 مل / 1 لتر",
+{id:"cream",cat:"ألبان وأجبان",name:"كريمة طبخ نيو بارك",
+en:"New Park Cooking Cream",price:1,weight:"160 مل / 1 لتر",
 img:"./New-park-cooking-cream -160ml.JPG",
 options:[
 ["160 مل",1,"./New-park-cooking-cream -160ml.JPG"],
 ["1 لتر",3,"./New-park-cooking-cream -1liter.JPG"]
-]
-},
+]},
 
-{
-id:"dollys-pomegranate",
-cat:"مواد غذائية",
-name:"دبس رمان دوليز",
-en:"Dollys Pomegranate Molasses",
-price:2.25,
-weight:"420 غ",
-img:"./Dollys-pomegranate-Molasses-420g.JPG"
-},
+{id:"dollys-pomegranate",cat:"مواد غذائية",name:"دبس رمان دوليز",
+en:"Dollys Pomegranate Molasses",price:2.25,weight:"420 غ",
+img:"./Dollys-pomegranate-Molasses-420g.JPG"},
 
-{
-id:"dollys-ketchup",
-cat:"مواد غذائية",
-name:"كاتشب طماطم دوليز",
-en:"Dollys Tomato Ketchup",
-price:4.5,
-weight:"2 كغ / 4 كغ",
+{id:"dollys-ketchup",cat:"مواد غذائية",name:"كاتشب طماطم دوليز",
+en:"Dollys Tomato Ketchup",price:4.5,weight:"2 كغ / 4 كغ",
 img:"./Dollys-tomato-ketchup-2kg.JPG",
 options:[
 ["2 كغ",4.5,"./Dollys-tomato-ketchup-2kg.JPG"],
 ["4 كغ",7.7,"./Dollys-tomato-ketchup-4kg.JPG"]
-]
-},
+]},
 
-{
-id:"labella-mushrooms",
-cat:"مواد غذائية",
-name:"فطر لا بيلا كامل",
-en:"La Bella Whole Mushrooms",
-price:1.25,
-weight:"300 غ",
-img:"./La-bella-whole-Mushrooms-300g.JPG"
-},
+{id:"labella-mushrooms",cat:"مواد غذائية",name:"فطر لا بيلا كامل",
+en:"La Bella Whole Mushrooms",price:1.25,weight:"300 غ",
+img:"./La-bella-whole-Mushrooms-300g.JPG"},
 
-{
-id:"larose-rice",
-cat:"مواد غذائية",
-name:"الوردة رز مصري",
-en:"La Rose Rouge Egyptian Rice",
-price:1.85,
-weight:"900 غ",
-img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"
-},
+{id:"larose-rice",cat:"مواد غذائية",name:"الوردة رز مصري",
+en:"La Rose Rouge Egyptian Rice",price:1.85,weight:"900 غ",
+img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"},
 
-{
-id:"deroni-rice",
-cat:"مواد غذائية",
-name:"ديروني رز مصري",
-en:"Deroni Egyptian Rice",
-price:1,
-weight:"900 غ",
-img:"./Deroni-Egyptian-rice-900g.JPG"
-},
+{id:"deroni-rice",cat:"مواد غذائية",name:"ديروني رز مصري",
+en:"Deroni Egyptian Rice",price:1,weight:"900 غ",
+img:"./Deroni-Egyptian-rice-900g.JPG"},
 
-{
-id:"nutella",
-cat:"مواد غذائية",
-name:"نوتيلا",
-en:"Nutella",
-price:7.5,
-weight:"750 غ",
-img:"./Nutella-750g.JPG"
-},
+{id:"nutella",cat:"مواد غذائية",name:"نوتيلا",en:"Nutella",
+price:7.5,weight:"750 غ",img:"./Nutella-750g.JPG"},
 
-{
-id:"uno-choco",
-cat:"مواد غذائية",
-name:"اونو شوكو سبريد",
-en:"Uno Choco Spread",
-price:2,
-weight:"350 غ",
-img:"./Uno-choco-spread-350g.JPG"
-},
+{id:"uno-choco",cat:"مواد غذائية",name:"اونو شوكو سبريد",
+en:"Uno Choco Spread",price:2,weight:"350 غ",
+img:"./Uno-choco-spread-350g.JPG"},
 
-{
-id:"yamama-paste",
-cat:"مواد غذائية",
-name:"رب بندورة يمامة",
-en:"Yamama Tomato Paste",
-price:3.65,
-weight:"1325 غ",
-img:"./Yamama-tomato-paste-1325g.JPG"
-},
+{id:"yamama-paste",cat:"مواد غذائية",name:"رب بندورة يمامة",
+en:"Yamama Tomato Paste",price:3.65,weight:"1325 غ",
+img:"./Yamama-tomato-paste-1325g.JPG"},
 
-{
-id:"zain-sugar",
-cat:"مواد غذائية",
-name:"سكر زين ابيض",
-en:"Zain White Sugar",
-price:.8,
-weight:"900 غ",
-img:"./Zain-WHITE -SUGAR-900g.JPG"
-},
+{id:"zain-sugar",cat:"مواد غذائية",name:"سكر زين ابيض",
+en:"Zain White Sugar",price:.8,weight:"900 غ",
+img:"./Zain-WHITE -SUGAR-900g.JPG"},
 
-{
-id:"xtra-ketchup",
-cat:"مواد غذائية",
-name:"كاتشب Xtra",
-en:"Xtra Ketchup",
-price:7.8,
-weight:"4.2 كغ",
-img:"./Xtra-ketchup-4.2kg.JPG"
-},
+{id:"xtra-ketchup",cat:"مواد غذائية",name:"كاتشب Xtra",
+en:"Xtra Ketchup",price:7.8,weight:"4.2 كغ",
+img:"./Xtra-ketchup-4.2kg.JPG"},
 
-{
-id:"oxi",
-cat:"مواد تنظيف",
-name:"أوكسي سائل جلي",
-en:"Oxi Dishwashing Liquid",
-price:1.3,
-weight:"تفاح / ليمون",
+{id:"oxi",cat:"مواد تنظيف",name:"أوكسي سائل جلي",
+en:"Oxi Dishwashing Liquid",price:1.3,weight:"تفاح / ليمون",
 img:"./Oxi-dishwashing-liquid-apple-600ml.JPG",
 options:[
 ["تفاح",1.3,"./Oxi-dishwashing-liquid-apple-600ml.JPG"],
 ["ليمون",1.3,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]
-]
-},
+]},
 
-{
-id:"silkwave",
-cat:"مواد تنظيف",
-name:"سيلك ويف معطر غسيل",
-en:"Silkwave Fabric Softener",
-price:1.3,
-weight:"1 لتر",
+{id:"silkwave",cat:"مواد تنظيف",name:"سيلك ويف معطر غسيل",
+en:"Silkwave Fabric Softener",price:1.3,weight:"1 لتر",
 img:"./Silkwave-fabric-softener-blue-1liter.JPG",
 options:[
 ["أزرق",1.3,"./Silkwave-fabric-softener-blue-1liter.JPG"],
@@ -1893,216 +752,106 @@ options:[
 ["زهري",1.3,"./Silkwave-fabric-softener-pink-1liter.JPG"],
 ["أبيض",1.3,"./Silkwave-fabric-softener-white-1liter.JPG"],
 ["أصفر",1.3,"./Silkwave-fabric-softener-yellow-1liter.JPG"]
-]
-},
+]},
 
-{
-id:"sunsilk",
-cat:"مواد تنظيف",
-name:"صانسيلك شامبو",
-en:"Sunsilk Shampoo",
-price:3.2,
-weight:"600 مل",
+{id:"sunsilk",cat:"مواد تنظيف",name:"صانسيلك شامبو",
+en:"Sunsilk Shampoo",price:3.2,weight:"600 مل",
 img:"./Sunsilk-shampoo-pink-600ml.JPG",
 options:[
 ["زهري",3.2,"./Sunsilk-shampoo-pink-600ml.JPG"],
 ["أصفر",3.2,"./Sunsilk-shampoo-yellow-600ml.JPG"]
-]
-},
+]},
 
-{
-id:"my-tomato",
-cat:"مواد غذائية",
-name:"ماي توماتو مربى البندورة",
-en:"My Tomato",
-price:1,
-weight:"400 غ / 800 غ",
+{id:"my-tomato",cat:"مواد غذائية",name:"ماي توماتو مربى البندورة",
+en:"My Tomato",price:1,weight:"400 غ / 800 غ",
 img:"./My-tomato-400g.JPG",
 options:[
 ["400 غ",1,"./My-tomato-400g.JPG"],
 ["800 غ",1.9,"./My-tomato-800g.JPG"]
-]
-},
+]},
 
-{
-id:"noura-shampoo-18",
-cat:"مواد تنظيف",
-name:"شامبو نورا",
-en:"Noura Shampoo",
-price:3.1,
-weight:"زهري / أزرق - 1.8 لتر",
+{id:"noura-shampoo-18",cat:"مواد تنظيف",name:"شامبو نورا",
+en:"Noura Shampoo",price:3.1,weight:"زهري / أزرق - 1.8 لتر",
 img:"./Noura-shampoo-pink-1.8liter.JPG",
 options:[
 ["زهري - 1.8 لتر",3.1,"./Noura-shampoo-pink-1.8liter.JPG"],
 ["أزرق - 1.8 لتر",3.1,"./Noura-shampoo-blue-1.8liter.JPG"]
-]
-},
+]},
 
-{
-id:"spartan-flash",
-cat:"مواد تنظيف",
-name:"سبارتان فلاش",
-en:"Spartan Flash",
-price:2.7,
-weight:"1 لتر",
-img:"./Spartan-flash-1liter.JPG"
-},
+{id:"spartan-flash",cat:"مواد تنظيف",name:"سبارتان فلاش",
+en:"Spartan Flash",price:2.7,weight:"1 لتر",
+img:"./Spartan-flash-1liter.JPG"},
 
-{
-id:"dimex-javel",
-cat:"مواد تنظيف",
-name:"دايمكس جافيل",
-en:"Dimex Javel",
-price:.75,
-weight:"1 لتر",
-img:"./Dimex-javel-1liter.JPG"
-},
+{id:"dimex-javel",cat:"مواد تنظيف",name:"دايمكس جافيل",
+en:"Dimex Javel",price:.75,weight:"1 لتر",
+img:"./Dimex-javel-1liter.JPG"},
 
-{
-id:"carmel-javel",
-cat:"مواد تنظيف",
-name:"كارمل جافيل",
-en:"Carmel Javel",
-price:.85,
-weight:"1 لتر",
-img:"./Carmel-javel-1liter.JPG"
-},
+{id:"carmel-javel",cat:"مواد تنظيف",name:"كارمل جافيل",
+en:"Carmel Javel",price:.85,weight:"1 لتر",
+img:"./Carmel-javel-1liter.JPG"},
 
-{
-id:"clorox",
-cat:"مواد تنظيف",
-name:"كلور جافيل كلوروكس",
-en:"Clorox",
-price:1.3,
-weight:"1 لتر",
-img:"./Clorox-1liter.JPG"
-},
+{id:"clorox",cat:"مواد تنظيف",name:"كلور جافيل كلوروكس",
+en:"Clorox",price:1.3,weight:"1 لتر",
+img:"./Clorox-1liter.JPG"},
 
-{
-id:"odex",
-cat:"مواد تنظيف",
-name:"أوديكس",
-en:"Odex",
-price:1.5,
-weight:"1 لتر",
-img:"./Odex-1liter.JPG"
-},
+{id:"odex",cat:"مواد تنظيف",name:"أوديكس",
+en:"Odex",price:1.5,weight:"1 لتر",
+img:"./Odex-1liter.JPG"},
 
-{
-id:"carmel-cleaner",
-cat:"مواد تنظيف",
-name:"كارمل معطر ارض",
-en:"Carmel",
-price:1.2,
-weight:"ليمون / صنوبر / عود - 800 مل",
+{id:"carmel-cleaner",cat:"مواد تنظيف",name:"كارمل معطر ارض",
+en:"Carmel",price:1.2,weight:"ليمون / صنوبر / عود - 800 مل",
 img:"./Carmel-lemon-800ml.JPG",
 options:[
 ["ليمون - 800 مل",1.2,"./Carmel-lemon-800ml.JPG"],
 ["صنوبر - 800 مل",1.2,"./Carmel-pine-800ml.JPG"],
 ["عود - 800 مل",1.2,"./Carmel-oud-800ml.JPG"]
-]
-},
+]},
 
-{
-id:"noura-shampoo-yellow",
-cat:"مواد تنظيف",
-name:"شامبو نورا",
-en:"Noura Shampoo",
-price:2.4,
-weight:"1.25 لتر",
-img:"./Noura-shampoo-yellow-1.25liter.JPG"
-},
+{id:"noura-shampoo-yellow",cat:"مواد تنظيف",name:"شامبو نورا",
+en:"Noura Shampoo",price:2.4,weight:"1.25 لتر",
+img:"./Noura-shampoo-yellow-1.25liter.JPG"},
 
-{
-id:"novin-plastic-spoons-50pcs",
-cat:"بلاستيك",
-name:"ملاعق بلاستيك نوڤين",
-en:"Novin Plastic Spoons",
-price:.55,
-weight:"50 حبة",
-img:"./novin-plastic-spoons-50pcs.JPG"
-},
+{id:"novin-plastic-spoons-50pcs",cat:"بلاستيك",name:"ملاعق بلاستيك نوڤين",
+en:"Novin Plastic Spoons",price:.55,weight:"50 حبة",
+img:"./novin-plastic-spoons-50pcs.JPG"},
 
-{
-id:"hd-plast-table-covers-roll",
-cat:"بلاستيك",
-name:"أغطية طاولات HD Plast",
-en:"HD Plast Table Covers",
-price:1,
-weight:"رول",
-img:"./hd-plast-table-covers-roll.JPG"
-},
+{id:"hd-plast-table-covers-roll",cat:"بلاستيك",name:"أغطية طاولات HD Plast",
+en:"HD Plast Table Covers",price:1,weight:"رول",
+img:"./hd-plast-table-covers-roll.JPG"},
 
-{
-id:"freshdays-normal-72pcs",
-cat:"عناية شخصية",
-name:"فريش دايز عادي",
-en:"Freshdays Normal",
-price:3.9,
-weight:"72 حبة",
-img:"./freshdays-normal-72pcs.JPG"
-},
+{id:"freshdays-normal-72pcs",cat:"عناية شخصية",name:"فريش دايز عادي",
+en:"Freshdays Normal",price:3.9,weight:"72 حبة",
+img:"./freshdays-normal-72pcs.JPG"},
 
-{
-id:"freshdays-normal-scented-72pcs",
-cat:"عناية شخصية",
-name:"فريش دايز عادي معطر",
-en:"Freshdays Normal Scented",
-price:3.9,
-weight:"72 حبة",
-img:"./freshdays-normal-scented-72pcs.JPG"
-},
+{id:"freshdays-normal-scented-72pcs",cat:"عناية شخصية",
+name:"فريش دايز عادي معطر",en:"Freshdays Normal Scented",
+price:3.9,weight:"72 حبة",
+img:"./freshdays-normal-scented-72pcs.JPG"},
 
-{
-id:"trama-food-freezer-bags-22x35-100pcs",
-cat:"بلاستيك",
-name:"أكياس فريزر تراما",
-en:"Trama Food Freezer Bags",
-price:1,
-weight:"22×35 سم / 100 حبة",
-img:"./trama-food-freezer-bags-22x35-100pcs.JPG"
-},
+{id:"trama-food-freezer-bags-22x35-100pcs",cat:"بلاستيك",
+name:"أكياس فريزر تراما",en:"Trama Food Freezer Bags",
+price:1,weight:"22×35 سم / 100 حبة",
+img:"./trama-food-freezer-bags-22x35-100pcs.JPG"},
 
-{
-id:"relax-maternity-20pcs",
-cat:"عناية شخصية",
-name:"فوط أمومة ريلاكس",
-en:"Relax Maternity",
-price:2.55,
-weight:"20 حبة",
-img:"./relax-maternity-20pcs.JPG"
-},
+{id:"relax-maternity-20pcs",cat:"عناية شخصية",name:"فوط أمومة ريلاكس",
+en:"Relax Maternity",price:2.55,weight:"20 حبة",
+img:"./relax-maternity-20pcs.JPG"},
 
-{
-id:"freshdays-long-72pcs",
-cat:"عناية شخصية",
-name:"فريش دايز طويل",
-en:"Freshdays Long",
-price:4.45,
-weight:"72 حبة",
-img:"./freshdays-long-72pcs.JPG"
-},
+{id:"freshdays-long-72pcs",cat:"عناية شخصية",name:"فريش دايز طويل",
+en:"Freshdays Long",price:4.45,weight:"72 حبة",
+img:"./freshdays-long-72pcs.JPG"},
 
-{
-id:"upm-light-fork-50pcs",
-cat:"بلاستيك",
-name:"شوك بلاستيك UPM Light",
-en:"UPM Light Forks",
-price:.55,
-weight:"50 حبة",
-img:"./upm-light-fork-50pcs.JPG"
-}
+{id:"upm-light-fork-50pcs",cat:"بلاستيك",name:"شوك بلاستيك UPM Light",
+en:"UPM Light Forks",price:.55,weight:"50 حبة",
+img:"./upm-light-fork-50pcs.JPG"}
 
 ];
 
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]"),
 fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]"),
-category="الكل",
-onlyFav=false,
-selected=null;
+category="الكل",onlyFav=false,selected=null;
 
 let tekramBackPosition=null;
-
 const $=id=>document.getElementById(id);
 
 function save(){
@@ -2110,9 +859,7 @@ localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav))
 }
 
-function focusSearch(){
-$("search").focus()
-}
+function focusSearch(){$("search").focus()}
 
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
@@ -2120,129 +867,73 @@ document.querySelectorAll(".bottom-nav button")
 }
 
 function categoriesHTML(){
-
 $("cats").innerHTML=cats.map(x=>
 `<button class="${x===category&&!onlyFav?"active":""}"
-onclick="choose('${x}')">${x}</button>`
-).join("")
-
+onclick="choose('${x}')">${x}</button>`).join("")
 }
 
-function discountPercent(a,b){
-return Math.round((1-b/a)*100)
-}
+function discountPercent(a,b){return Math.round((1-b/a)*100)}
 
 function priceHTML(p){
-
 return p.oldPrice
-
 ?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span>
 <span class="new-price">$${p.price.toFixed(2)}</span>
 <span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
-
 :`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`
-
 }
 
 function card(p){
-
 let f=fav.includes(p.id);
 
-return `
-<div class="card" onclick="detail('${p.id}')">
+return `<div class="card" onclick="detail('${p.id}')">
 
 <button class="fav ${f?"on":""}"
-onclick="toggleFav(event,'${p.id}')">
-${f?"♥":"♡"}
-</button>
+onclick="toggleFav(event,'${p.id}')">${f?"♥":"♡"}</button>
 
 <div class="pic">
-${p.img
-?`<img src="${p.img}" alt="${p.name}">`
-:p.icon||"🛒"}
+${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 
 <div class="info">
-
 <span class="badge">${p.cat}</span>
-
-${p.oldPrice
-?`<span class="offer-badge">🔥 عرض</span>`
-:""}
-
 <div class="name">${p.name}</div>
-
 <div class="en">${p.en}</div>
-
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
-
-<div>
-${priceHTML(p)}
-</div>
-
-<button class="add"
-onclick="quick(event,'${p.id}')">
-+
-</button>
-
-</div>
-
+<div>${priceHTML(p)}</div>
+<button class="add" onclick="quick(event,'${p.id}')">+</button>
 </div>
 </div>
-`
+</div>`
 }
 
 function offerCard(p){
-
-return `
-<div class="offer-card" onclick="detail('${p.id}')">
+return `<div class="offer-card" onclick="detail('${p.id}')">
 
 <div class="offer-label">🔥 عرض</div>
 
 <div class="pic">
-${p.img
-?`<img src="${p.img}" alt="${p.name}">`
-:p.icon||"🛒"}
+${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 
 <div class="info">
-
 <div class="name">${p.name}</div>
-
 <div class="en">${p.en}</div>
-
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
-
-<div>
-${priceHTML(p)}
+<div>${priceHTML(p)}</div>
+<button class="add" onclick="quick(event,'${p.id}')">+</button>
 </div>
-
-<button class="add"
-onclick="quick(event,'${p.id}')">
-+
-</button>
-
 </div>
-
-</div>
-
-</div>
-`
+</div>`
 }
 
 function renderOffers(){
-
 let o=products.filter(p=>p.oldPrice);
-
 $("offersSection").style.display=o.length?"block":"none";
-
-if(o.length)
-$("offerGrid").innerHTML=o.map(offerCard).join("")
-
+if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")
 }
 
 function render(){
@@ -2250,174 +941,112 @@ function render(){
 let q=$("search").value.trim().toLowerCase();
 
 let list=products.filter(p=>
-
 (!onlyFav||fav.includes(p.id))&&
-
 (category==="الكل"||p.cat===category)&&
-
-(!q||(p.name+" "+p.en)
-.toLowerCase()
-.includes(q))
-
+(!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
 
-$("title").textContent=
-onlyFav
-?"المفضلة"
-:q
-?"نتائج البحث"
-:category==="الكل"
-?"منتجاتنا"
-:category;
+$("title").textContent=onlyFav?"المفضلة":
+q?"نتائج البحث":
+category==="الكل"?"منتجاتنا":category;
 
-$("sub").textContent=
-onlyFav
-?"المنتجات التي حفظتها ❤️"
-:"اختيارات من تِكرَم";
+$("sub").textContent=onlyFav?
+"المنتجات التي حفظتها ❤️":"اختيارات من تِكرَم";
 
-$("grid").innerHTML=list.length
-?list.map(card).join("")
-:`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
+$("grid").innerHTML=list.length?
+list.map(card).join(""):
+`<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
 
 categoriesHTML();
 renderOffers();
 updateCart()
-
 }
 
 function choose(x){
-
 category=x;
 onlyFav=false;
-
 render();
 scrollProducts();
 nav(1)
-
 }
 
 function categoriesPage(){
-
 closePanels();
 home();
 nav(1);
-
 setTimeout(scrollProducts,50)
-
 }
 
 function favoritesPage(){
-
 category="الكل";
 onlyFav=true;
-
 $("productPage").style.display="none";
 $("homePage").style.display="block";
-
 render();
 nav(2);
 scrollProducts()
-
 }
 
 function toggleFav(e,id){
-
 e.stopPropagation();
-
-fav=fav.includes(id)
-?fav.filter(x=>x!==id)
-:[...fav,id];
-
+fav=fav.includes(id)?
+fav.filter(x=>x!==id):[...fav,id];
 save();
 render()
-
 }
 
 function quick(e,id){
-
 e.stopPropagation();
 
 let p=products.find(x=>x.id===id);
 
 if(!p.options){
-
-add({
-name:p.name,
-option:p.weight,
-price:p.price
-});
-
+add({name:p.name,option:p.weight,price:p.price});
 openCart();
 return
-
 }
 
 openOptionPicker(p)
-
 }
 
 function openOptionPicker(p){
 
 $("optionTitle").textContent=p.name;
 
-$("optionChoices").innerHTML=
-p.options.map((o,i)=>
-
+$("optionChoices").innerHTML=p.options.map((o,i)=>
 `<button class="pick-option"
 onclick="pickOption('${p.id}',${i})">
-
-${o[0]}
-
-<small>
-$${o[1].toFixed(2)}
-</small>
-
-</button>`
-
-).join("");
+${o[0]}<small>$${o[1].toFixed(2)}</small>
+</button>`).join("");
 
 $("optionModal").style.display="flex"
-
 }
 
 function pickOption(id,i){
 
-let p=products.find(x=>x.id===id),
-o=p.options[i];
+let p=products.find(x=>x.id===id),o=p.options[i];
 
-add({
-name:p.name,
-option:o[0],
-price:o[1]
-});
+add({name:p.name,option:o[0],price:o[1]});
 
 closeOptionPicker();
 openCart()
-
 }
 
 function closeOptionPicker(){
-
 $("optionModal").style.display="none"
-
 }
 
 function detail(id,opt=0){
 
 let p=products.find(x=>x.id===id),
-o=p.options
-?p.options[opt]
-:[p.weight,p.price,p.img||p.icon||""];
+o=p.options?p.options[opt]:
+[p.weight,p.price,p.img||p.icon||""];
 
-if(tekramBackPosition===null){
-tekramBackPosition=window.scrollY
-}
+if(tekramBackPosition===null)
+tekramBackPosition=window.scrollY;
 
 selected={
-name:p.name,
-option:o[0],
-price:o[1],
-oldPrice:p.oldPrice||null
+name:p.name,option:o[0],price:o[1],oldPrice:p.oldPrice||null
 };
 
 $("dcat").textContent=p.cat;
@@ -2425,63 +1054,43 @@ $("dname").textContent=p.name;
 $("den").textContent=p.en;
 $("dweight").textContent=o[0];
 $("dprice").textContent="$"+o[1].toFixed(2);
-
-$("doldprice").textContent=
-p.oldPrice
-?"$"+p.oldPrice.toFixed(2)
-:"";
-
-$("ddesc").textContent=
-p.name+", "+o[0];
+$("doldprice").textContent=p.oldPrice?"$"+p.oldPrice.toFixed(2):"";
+$("ddesc").textContent=p.name+", "+o[0];
 
 $("dimg").innerHTML=
 typeof o[2]==="string"&&o[2].startsWith(".")
 ?`<img src="${o[2]}" alt="${p.name}">`
 :`<span>${o[2]||p.icon||"🛒"}</span>`;
 
-$("options").innerHTML=
-p.options
-?p.options.map((x,i)=>
+$("options").innerHTML=p.options?
+p.options.map((x,i)=>
 `<button class="option ${i===opt?"sel":""}"
-onclick="detail('${p.id}',${i})">
-${x[0]}
-</button>`
-).join("")
-:"";
+onclick="detail('${p.id}',${i})">${x[0]}</button>`).join(""):"";
 
 $("homePage").style.display="none";
 $("productPage").style.display="block";
 
 window.scrollTo(0,0)
-
 }
 
 function add(x){
 
-let o=cart.find(i=>
-i.name===x.name&&i.option===x.option
-);
+let o=cart.find(i=>i.name===x.name&&i.option===x.option);
 
-o
-?o.qty++
-:cart.push({...x,qty:1});
+o?o.qty++:cart.push({...x,qty:1});
 
 save();
 updateCart()
-
 }
 
 function addSelected(){
-
 add(selected);
 openCart()
-
 }
 
 function updateCart(){
 
-$("count").textContent=
-cart.reduce((a,x)=>a+x.qty,0);
+$("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
 
 if(!cart.length){
 
@@ -2493,86 +1102,47 @@ $("cartBody").innerHTML=
 </div>`;
 
 $("total").textContent="$0.00";
-
 return
 }
 
-$("cartBody").innerHTML=
-cart.map((x,i)=>
-
+$("cartBody").innerHTML=cart.map((x,i)=>
 `<div class="cart-item">
 
 <div class="cart-row">
-
 <div>
-
-<div class="cart-name">
-${x.name}
+<div class="cart-name">${x.name}</div>
+<span class="cart-option">${x.option}</span>
 </div>
-
-<span class="cart-option">
-${x.option}
-</span>
-
-</div>
-
-<b class="cart-price">
-$${(x.price*x.qty).toFixed(2)}
-</b>
-
+<b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b>
 </div>
 
 <div class="controls">
-
-<button class="qty"
-onclick="qty(${i},-1)">
-−
-</button>
-
-<b class="qty-number">
-${x.qty}
-</b>
-
-<button class="qty"
-onclick="qty(${i},1)">
-+
-</button>
-
-<button class="remove"
-onclick="removeItem(${i})">
-حذف
-</button>
-
+<button class="qty" onclick="qty(${i},-1)">−</button>
+<b class="qty-number">${x.qty}</b>
+<button class="qty" onclick="qty(${i},1)">+</button>
+<button class="remove" onclick="removeItem(${i})">حذف</button>
 </div>
 
-</div>`
-
-).join("");
+</div>`).join("");
 
 $("total").textContent="$"+
 cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
-
 }
 
 function qty(i,n){
 
 cart[i].qty+=n;
 
-if(cart[i].qty<1)
-cart.splice(i,1);
+if(cart[i].qty<1)cart.splice(i,1);
 
 save();
 updateCart()
-
 }
 
 function removeItem(i){
-
 cart.splice(i,1);
-
 save();
 updateCart()
-
 }
 
 function openCart(){
@@ -2583,60 +1153,38 @@ $("cartPanel").style.right="0";
 $("overlay").style.display="block";
 
 nav(3)
-
 }
 
 function checkout(){
 
-if(!cart.length)
-return alert("السلة فارغة");
+if(!cart.length)return alert("السلة فارغة");
 
 closePanels();
 
 $("checkoutPanel").style.right="0";
 $("overlay").style.display="block";
 
-let s=cart.reduce(
-(a,x)=>a+x.price*x.qty,0
-);
+let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
 
 $("summary").innerHTML=
-
 cart.map(x=>
+`<div class="summary-row">
+<span>${x.name}<br><small>${x.option} × ${x.qty}</small></span>
+<b>$${(x.price*x.qty).toFixed(2)}</b>
+</div>`).join("")+
 
 `<div class="summary-row">
-
-<span>
-${x.name}
-<br>
-<small>${x.option} × ${x.qty}</small>
-</span>
-
-<b>
-$${(x.price*x.qty).toFixed(2)}
-</b>
-
-</div>`
-
-).join("")+
-
-`
-<div class="summary-row">
-<b>المجموع الفرعي</b>
-<b>$${s.toFixed(2)}</b>
+<b>المجموع الفرعي</b><b>$${s.toFixed(2)}</b>
 </div>
 
 <div class="summary-row">
-<b>التوصيل</b>
-<b>$${DELIVERY.toFixed(2)}</b>
+<b>التوصيل</b><b>$${DELIVERY.toFixed(2)}</b>
 </div>
 
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
-</div>
-`
-
+</div>`
 }
 
 function closePanels(){
@@ -2645,7 +1193,6 @@ $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
 $("overlay").style.display="none"
-
 }
 
 function openMenu(){
@@ -2654,26 +1201,17 @@ closePanels();
 
 $("menuPanel").style.left="0";
 $("overlay").style.display="block"
-
 }
 
 function menuHome(){
-
 closePanels();
 home()
-
 }
 
 function menuProducts(){
-
 closePanels();
 home();
-
-setTimeout(
-scrollProducts,
-100
-)
-
+setTimeout(scrollProducts,100)
 }
 
 function menuOffers(){
@@ -2690,21 +1228,16 @@ s.style.display!=="none"
 :alert("ما في عروض مضافة حاليًا 🔥")
 
 },100)
-
 }
 
 function menuFavorites(){
-
 closePanels();
 favoritesPage()
-
 }
 
 function menuCart(){
-
 closePanels();
 openCart()
-
 }
 
 async function sendOrder(){
@@ -2715,13 +1248,9 @@ ar=$("area").value,
 ad=$("address").value.trim();
 
 if(!n||!ph||!ar||!ad)
-return alert(
-"يرجى تعبئة الاسم والهاتف والمنطقة والعنوان"
-);
+return alert("يرجى تعبئة الاسم والهاتف والمنطقة والعنوان");
 
-let sub=cart.reduce(
-(a,x)=>a+x.price*x.qty,0
-);
+let sub=cart.reduce((a,x)=>a+x.price*x.qty,0);
 
 let order=cart.map(x=>
 `• ${x.name} | ${x.option} | ×${x.qty} | $${(x.price*x.qty).toFixed(2)}`
@@ -2732,37 +1261,23 @@ $("send").textContent="جاري الإرسال...";
 
 try{
 
-let r=await fetch(
-"https://api.web3forms.com/submit",
-{
+let r=await fetch("https://api.web3forms.com/submit",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
 "Accept":"application/json"
 },
 body:JSON.stringify({
-
 access_key:KEY,
-
 subject:"🛒 طلب جديد من تِكرَم",
-
-name:n,
-phone:ph,
-area:ar,
-address:ad,
+name:n,phone:ph,area:ar,address:ad,
 notes:$("notes").value,
-
 order,
-
 subtotal:"$"+sub.toFixed(2),
-
 delivery:"$"+DELIVERY.toFixed(2),
-
 total:"$"+(sub+DELIVERY).toFixed(2)
-
 })
-}
-);
+});
 
 let data=await r.json();
 
@@ -2771,7 +1286,6 @@ if(data.success){
 alert("تم إرسال طلبك بنجاح ❤️");
 
 cart=[];
-
 save();
 updateCart();
 closePanels();
@@ -2782,21 +1296,14 @@ $("area").value="";
 $("address").value="";
 $("notes").value="";
 
-}else{
-
-alert("تعذر إرسال الطلب.")
-
-}
+}else alert("تعذر إرسال الطلب.")
 
 }catch(e){
-
 alert("تعذر إرسال الطلب حالياً.")
-
 }
 
 $("send").disabled=false;
 $("send").textContent="تأكيد الطلب ✓"
-
 }
 
 function home(){
@@ -2813,40 +1320,24 @@ nav(0);
 if(tekramBackPosition!==null){
 
 let y=tekramBackPosition;
-
 tekramBackPosition=null;
 
-setTimeout(()=>{
-
-window.scrollTo({
-top:y,
-behavior:"smooth"
-});
-
-},50);
+setTimeout(()=>
+window.scrollTo({top:y,behavior:"smooth"}),50)
 
 }else{
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"})
 
 }
-
 }
 
 function scrollProducts(){
-
-$("products").scrollIntoView({
-behavior:"smooth"
-})
-
+$("products").scrollIntoView({behavior:"smooth"})
 }
 
 categoriesHTML();
 render();
-
 </script>
 
 </body>
