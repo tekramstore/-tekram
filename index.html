@@ -4,169 +4,1297 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>تِكرَم | Tekram</title>
+
 <style>
-:root{--g:#183d30;--g2:#244f3e;--c:#f7f0e4;--c2:#eee4d3;--o:#df5035;--gold:#e5aa45;--w:#fffdf8;--m:#77786f;--b:#e5dac8}
+:root{
+--g:#173f32;
+--g2:#245644;
+--g3:#316c55;
+--c:#f7f1e6;
+--c2:#eee5d5;
+--o:#df5035;
+--gold:#dca94a;
+--w:#fffdf8;
+--m:#77786f;
+--b:#e3d8c6;
+--shadow:0 5px 18px #183d3012
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Tahoma,Arial,sans-serif;background:var(--c);color:var(--g);line-height:1.6}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:Tahoma,Arial,sans-serif;
+background:var(--c);
+color:var(--g);
+line-height:1.6;
+overflow-x:hidden
+}
+
 button,input,textarea,select{font-family:inherit}
 button{cursor:pointer}
-header{background:var(--g);position:sticky;top:0;z-index:20;padding:0}
-.head{position:relative;width:100%;display:flex;justify-content:space-between;align-items:center}
-.site-logo{width:100%;height:auto;max-height:110px;display:block;object-fit:contain}
-.logo-home{position:absolute;inset:0;z-index:1;display:block}
-.icons{display:flex;gap:8px;position:absolute;z-index:3;top:12px}
-.icons:first-child{right:5%}
-.icons:last-child{left:5%}
-.icon{width:45px;height:45px;border:0;border-radius:50%;background:var(--w);color:var(--g);font-size:20px}
+
+header{
+background:var(--g);
+position:sticky;
+top:0;
+z-index:20;
+box-shadow:0 3px 18px #0002
+}
+
+.head{
+height:82px;
+max-width:1250px;
+margin:auto;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.site-logo{
+width:125px;
+height:72px;
+object-fit:contain;
+display:block
+}
+
+.logo-home{
+position:absolute;
+inset:0;
+z-index:1;
+display:block
+}
+
+.icons{
+display:flex;
+gap:8px;
+position:absolute;
+z-index:3;
+top:18px
+}
+
+.icons:first-of-type{right:18px}
+.icons:last-of-type{left:18px}
+
+.icon{
+width:43px;
+height:43px;
+border:1px solid #ffffff22;
+border-radius:50%;
+background:#fffdf8;
+color:var(--g);
+font-size:19px;
+box-shadow:0 3px 10px #0002
+}
+
 .cart-top{position:relative}
-.count{position:absolute;top:-4px;right:-3px;background:var(--o);color:#fff;border-radius:20px;padding:1px 6px;font-size:10px}
-.search-wrap{background:var(--g);padding:0 5% 20px}
-.search{max-width:1250px;margin:auto;background:var(--w);height:50px;border-radius:30px;display:flex;align-items:center;padding:0 18px;gap:8px}
-.search input{width:100%;border:0;outline:0;background:none;font-size:14px}
-.hero-wrap,.section{padding:25px 5%}
-.hero{max-width:1250px;margin:auto;min-height:350px;background:var(--g);border-radius:30px;color:#fff;position:relative;overflow:hidden;display:flex;align-items:center}
-.hero:before{content:"";position:absolute;width:400px;height:400px;border:50px solid #244a3a;border-radius:50%;right:-100px;top:-240px}
-.hero-text{padding:40px 6%;max-width:650px;position:relative;z-index:2}
-.hero-small{color:var(--gold);font-weight:bold}
-.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.1;margin:10px 0 18px}
-.hero h1 span{color:#f4b04b}
-.hero p{color:#eee;margin-bottom:22px;font-size:14px}
-.hero button{border:0;background:var(--o);color:#fff;padding:13px 22px;border-radius:25px;font-weight:bold}
-.basket{position:absolute;left:8%;bottom:35px;width:270px;height:150px;background:#35634e;border-radius:25px 25px 55px 55px;border:8px solid #2c5644}
-.basket i{position:absolute;width:65px;height:75px;border-radius:10px;background:#fff;box-shadow:0 6px 12px #0003}
-.i1{background:#d93627!important;left:25px;top:-50px}
-.i2{background:#e8a936!important;right:25px;top:-65px}
-.i3{left:105px;top:-80px}
-.section{max-width:1250px;margin:auto;padding-bottom:120px}
-.title{margin-bottom:20px}
-.line{width:45px;height:3px;background:var(--g);margin-bottom:10px}
-.title h2{font-size:30px}
-.title p{color:var(--m);font-size:13px}
-.categories{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
-.categories button{border:1px solid var(--b);background:var(--w);color:var(--g);padding:8px 14px;border-radius:20px;font-size:11px;font-weight:bold}
-.categories .active{background:var(--g);color:#fff}
-.grid,.offer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card,.offer-card{position:relative;background:#fffdf8;border:1px solid var(--b);border-radius:20px;overflow:hidden;cursor:pointer}
-.card:hover{transform:translateY(-4px)}
-.pic{margin:9px;aspect-ratio:1;background:#eee5d6;border-radius:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:65px}
-.pic img{width:100%;height:100%;object-fit:contain}
-.info{padding:7px 12px 14px}
-.badge,.offer-badge{display:inline-block;padding:3px 8px;border-radius:15px;font-size:9px;font-weight:bold}
-.badge{background:#f3c97d;color:#5c3f17}
-.offer-badge{background:var(--o);color:#fff;margin-right:4px}
-.name{font-size:14px;font-weight:bold;margin-top:5px}
-.en{font-size:9px;color:var(--m)}
-.weight{font-size:10px;color:#555;margin-top:3px}
-.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
-.price{font-size:18px;font-weight:bold;direction:ltr}
-.old-price{font-size:11px;color:#999;text-decoration:line-through;margin-left:5px;direction:ltr}
-.new-price{font-size:18px;font-weight:bold;color:var(--o);direction:ltr}
-.discount{font-size:9px;font-weight:bold;color:var(--o);margin-right:5px}
-.add{width:35px;height:35px;border:0;border-radius:50%;background:var(--g);color:#fff}
-.fav{position:absolute;top:15px;left:15px;z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:#fffdf8ee;color:var(--g);font-size:19px;box-shadow:0 2px 8px #0002}
+
+.count{
+position:absolute;
+top:-5px;
+right:-4px;
+background:var(--o);
+color:#fff;
+border-radius:20px;
+min-width:19px;
+height:19px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:10px;
+font-weight:bold
+}
+
+.search-wrap{
+background:var(--g);
+padding:0 5% 17px
+}
+
+.search{
+max-width:1050px;
+margin:auto;
+height:48px;
+background:var(--w);
+border-radius:28px;
+display:flex;
+align-items:center;
+padding:0 17px;
+gap:8px;
+box-shadow:0 3px 12px #00012
+}
+
+.search span{
+font-size:18px;
+color:var(--m)
+}
+
+.search input{
+width:100%;
+border:0;
+outline:0;
+background:none;
+font-size:13px;
+color:var(--g)
+}
+
+.search input::placeholder{color:#9a988e}
+
+/* HERO */
+
+.hero-wrap{
+padding:22px 5% 12px
+}
+
+.hero{
+max-width:1180px;
+height:285px;
+margin:auto;
+background:
+radial-gradient(circle at 12% 115%,#315f4d 0 17%,transparent 17.5%),
+radial-gradient(circle at 91% -10%,#285442 0 28%,transparent 28.5%),
+var(--g);
+border-radius:27px;
+color:#fff;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+box-shadow:0 8px 25px #183d3020
+}
+
+/* غصن زيتون ديكوري */
+
+.hero:before{
+content:"";
+position:absolute;
+width:330px;
+height:330px;
+border:42px solid #285442;
+border-radius:50%;
+left:-180px;
+bottom:-210px;
+opacity:.8
+}
+
+.hero:after{
+content:"✦  ❧  ❧  ❧";
+position:absolute;
+left:28px;
+top:27px;
+font-size:17px;
+letter-spacing:6px;
+color:#d7a74b;
+opacity:.8;
+transform:rotate(-8deg)
+}
+
+.hero-text{
+padding:30px 7%;
+max-width:720px;
+position:relative;
+z-index:2
+}
+
+.hero-small{
+color:var(--gold);
+font-size:13px;
+font-weight:bold;
+margin-bottom:6px
+}
+
+.hero h1{
+font-size:clamp(35px,5vw,57px);
+line-height:1.15;
+margin:5px 0 13px;
+letter-spacing:-1px
+}
+
+.hero h1 span{
+color:#f1b44d
+}
+
+.hero p{
+color:#e9eee9;
+margin-bottom:18px;
+font-size:13px;
+max-width:510px
+}
+
+.hero button{
+border:0;
+background:var(--o);
+color:#fff;
+padding:11px 21px;
+border-radius:24px;
+font-weight:bold;
+font-size:12px;
+box-shadow:0 5px 14px #0002
+}
+
+.hero button:active{transform:scale(.97)}
+
+/* نلغي السلة القديمة */
+
+.basket{display:none}
+
+/* PRODUCTS */
+
+.section{
+max-width:1250px;
+margin:auto;
+padding:22px 5% 120px
+}
+
+.title{
+margin-bottom:15px
+}
+
+.line{
+width:38px;
+height:3px;
+background:var(--g);
+margin-bottom:8px;
+border-radius:4px
+}
+
+.title h2{
+font-size:27px;
+line-height:1.25
+}
+
+.title p{
+color:var(--m);
+font-size:12px;
+margin-top:2px
+}
+
+.categories{
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding:2px 1px 12px;
+margin-bottom:8px;
+scrollbar-width:none
+}
+
+.categories::-webkit-scrollbar{display:none}
+
+.categories button{
+flex:0 0 auto;
+border:1px solid var(--b);
+background:var(--w);
+color:var(--g);
+padding:8px 15px;
+border-radius:22px;
+font-size:11px;
+font-weight:bold;
+white-space:nowrap;
+transition:.2s
+}
+
+.categories button.active{
+background:var(--g);
+color:#fff;
+border-color:var(--g)
+}
+
+/* CARDS */
+
+.grid,
+.offer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
+}
+
+.card,
+.offer-card{
+position:relative;
+background:var(--w);
+border:1px solid var(--b);
+border-radius:19px;
+overflow:hidden;
+cursor:pointer;
+box-shadow:var(--shadow);
+transition:.2s
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px #183d3020
+}
+
+.pic{
+margin:8px;
+aspect-ratio:1;
+background:#f0eadf;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+font-size:60px
+}
+
+.pic img{
+width:100%;
+height:100%;
+object-fit:contain
+}
+
+.info{
+padding:6px 11px 13px
+}
+
+.badge,
+.offer-badge{
+display:inline-block;
+padding:3px 8px;
+border-radius:14px;
+font-size:8px;
+font-weight:bold
+}
+
+.badge{
+background:#f3d28d;
+color:#624619
+}
+
+.offer-badge{
+background:var(--o);
+color:#fff;
+margin-right:3px
+}
+
+.name{
+font-size:13px;
+font-weight:bold;
+margin-top:5px;
+line-height:1.45
+}
+
+.en{
+font-size:8.5px;
+color:var(--m);
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis
+}
+
+.weight{
+font-size:9px;
+color:#666;
+margin-top:2px
+}
+
+.bottom{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:9px;
+gap:5px
+}
+
+.price{
+font-size:17px;
+font-weight:bold;
+direction:ltr
+}
+
+.old-price{
+font-size:10px;
+color:#999;
+text-decoration:line-through;
+margin-left:4px;
+direction:ltr
+}
+
+.new-price{
+font-size:17px;
+font-weight:bold;
+color:var(--o);
+direction:ltr
+}
+
+.discount{
+font-size:8px;
+font-weight:bold;
+color:var(--o);
+margin-right:4px
+}
+
+.add{
+width:33px;
+height:33px;
+border:0;
+border-radius:50%;
+background:var(--g);
+color:#fff;
+font-size:17px;
+flex:none;
+box-shadow:0 3px 8px #183d3020
+}
+
+.fav{
+position:absolute;
+top:13px;
+left:13px;
+z-index:3;
+width:32px;
+height:32px;
+border:1px solid #e4ddcf;
+border-radius:50%;
+background:#fffdf8ee;
+color:var(--g);
+font-size:18px;
+box-shadow:0 2px 8px #00015
+}
+
 .fav.on{color:var(--o)}
-.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--m)}
-#offersSection{display:none;max-width:1250px;margin:auto;padding:0 5% 20px}
-.offer-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
-.offer-title h2{font-size:26px}
-.offer-title span{font-size:12px;color:var(--m)}
-.offer-card .pic{margin:9px}
-.offer-card .info{padding:7px 12px 15px}
-.offer-label{position:absolute;top:15px;right:15px;background:var(--o);color:#fff;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:bold;z-index:2}
-#productPage{display:none;padding:30px 5% 120px}
-.detail{max-width:1000px;margin:auto;background:var(--w);border-radius:25px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
-.detail-img{min-height:430px;background:#eee5d6;display:flex;align-items:center;justify-content:center;font-size:130px}
-.detail-img img{width:100%;height:100%;min-height:430px;object-fit:contain}
-.detail-info{padding:40px;display:flex;flex-direction:column;justify-content:center}
-.detail-cat{color:var(--o);font-size:12px;font-weight:bold}
-.detail-name{font-size:32px;font-weight:bold}
-.detail-en{color:var(--m);font-size:12px}
-.options{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}
-.option{border:1px solid var(--g);background:none;color:var(--g);padding:8px 13px;border-radius:10px;font-weight:bold}
-.option.sel{background:var(--g);color:#fff}
-.detail-price{font-size:30px;font-weight:bold;direction:ltr}
-.detail-old-price{font-size:15px;color:#999;text-decoration:line-through;direction:ltr;margin-bottom:2px}
-.detail-desc{font-size:13px;color:#59625b;margin:10px 0 18px}
-.detail-add,.back{border:0;padding:13px;border-radius:13px;font-weight:bold;font-size:15px}
-.detail-add{background:var(--o);color:#fff}
-.back{background:var(--g);color:#fff;margin-top:8px}
-.bottom-nav{position:fixed;z-index:50;bottom:14px;left:50%;transform:translateX(-50%);width:min(850px,94%);background:#fffdf8ee;backdrop-filter:blur(10px);border:1px solid var(--b);border-radius:30px;padding:8px 15px;display:flex;justify-content:space-around;box-shadow:0 8px 30px #0002}
-.bottom-nav button{border:0;background:none;color:var(--m);font-size:10px;font-weight:bold}
-.bottom-nav span{display:block;font-size:21px}
+
+.empty{
+grid-column:1/-1;
+text-align:center;
+padding:50px;
+color:var(--m)
+}
+
+/* OFFERS */
+
+#offersSection{
+display:none;
+max-width:1250px;
+margin:auto;
+padding:5px 5% 20px
+}
+
+.offer-title{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:14px
+}
+
+.offer-title h2{font-size:24px}
+.offer-title span{font-size:11px;color:var(--m)}
+
+.offer-card .pic{margin:8px}
+.offer-card .info{padding:6px 11px 13px}
+
+.offer-label{
+position:absolute;
+top:13px;
+right:13px;
+background:var(--o);
+color:#fff;
+padding:4px 9px;
+border-radius:20px;
+font-size:9px;
+font-weight:bold;
+z-index:2
+}
+
+/* PRODUCT PAGE */
+
+#productPage{
+display:none;
+padding:25px 5% 120px
+}
+
+.detail{
+max-width:1000px;
+margin:auto;
+background:var(--w);
+border-radius:25px;
+overflow:hidden;
+display:grid;
+grid-template-columns:1fr 1fr;
+box-shadow:var(--shadow)
+}
+
+.detail-img{
+min-height:430px;
+background:#f0eadf;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:130px
+}
+
+.detail-img img{
+width:100%;
+height:100%;
+min-height:430px;
+object-fit:contain
+}
+
+.detail-info{
+padding:40px;
+display:flex;
+flex-direction:column;
+justify-content:center
+}
+
+.detail-cat{
+color:var(--o);
+font-size:12px;
+font-weight:bold
+}
+
+.detail-name{
+font-size:32px;
+font-weight:bold
+}
+
+.detail-en{
+color:var(--m);
+font-size:12px
+}
+
+.options{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin:18px 0
+}
+
+.option{
+border:1px solid var(--g);
+background:none;
+color:var(--g);
+padding:8px 13px;
+border-radius:10px;
+font-weight:bold
+}
+
+.option.sel{
+background:var(--g);
+color:#fff
+}
+
+.detail-price{
+font-size:30px;
+font-weight:bold;
+direction:ltr
+}
+
+.detail-old-price{
+font-size:15px;
+color:#999;
+text-decoration:line-through;
+direction:ltr;
+margin-bottom:2px
+}
+
+.detail-desc{
+font-size:13px;
+color:#59625b;
+margin:10px 0 18px
+}
+
+.detail-add,
+.back{
+border:0;
+padding:13px;
+border-radius:13px;
+font-weight:bold;
+font-size:15px
+}
+
+.detail-add{
+background:var(--o);
+color:#fff
+}
+
+.back{
+background:var(--g);
+color:#fff;
+margin-top:8px
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+position:fixed;
+z-index:50;
+bottom:12px;
+left:50%;
+transform:translateX(-50%);
+width:min(650px,92%);
+background:#fffdf8f2;
+backdrop-filter:blur(14px);
+border:1px solid var(--b);
+border-radius:24px;
+padding:6px 9px;
+display:flex;
+justify-content:space-around;
+box-shadow:0 8px 30px #0002
+}
+
+.bottom-nav button{
+border:0;
+background:none;
+color:var(--m);
+font-size:9px;
+font-weight:bold;
+min-width:65px;
+padding:2px 5px
+}
+
+.bottom-nav span{
+display:block;
+font-size:19px;
+line-height:23px
+}
+
 .bottom-nav .active{color:var(--o)}
-.overlay{display:none;position:fixed;inset:0;background:#0006;z-index:100}
-.panel,.menu-panel{position:fixed;z-index:101;top:0;height:100vh;background:var(--w);transition:.3s;display:flex;flex-direction:column}
-.panel{right:-430px;width:410px;max-width:94%}
-.menu-panel{left:-430px;width:360px;max-width:90%;box-shadow:8px 0 30px #0002}
 
-/* اختيار اللون / الطعمة / الحجم */
-.option-modal{display:none;position:fixed;inset:0;background:#0006;z-index:200;align-items:center;justify-content:center;padding:20px}
-.option-box{width:min(420px,100%);background:var(--w);border-radius:22px;padding:25px 20px;position:relative;box-shadow:0 15px 50px #0004}
-.option-close{position:absolute;left:15px;top:15px;width:34px;height:34px;border:0;border-radius:10px;background:var(--c2);color:var(--g);font-size:21px}
-.option-box h3{font-size:20px;margin-bottom:3px;padding-left:45px}
-.option-box p{font-size:12px;color:var(--m);margin-bottom:16px}
-.option-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.pick-option{border:1px solid var(--b);background:var(--c);color:var(--g);padding:12px 8px;border-radius:12px;font-weight:bold}
-.pick-option small{display:block;color:var(--o);font-size:11px;margin-top:2px}
-.pick-option:active{background:var(--g);color:#fff}
+/* PANELS */
 
-.menu-head{padding:22px 18px;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:space-between}
-.menu-brand{font:900 25px Georgia}
-.menu-brand small{display:block;font:11px Tahoma;color:var(--gold);font-weight:normal}
-.menu-close{border:0;background:none;color:#fff;font-size:30px}
+.overlay{
+display:none;
+position:fixed;
+inset:0;
+background:#0006;
+z-index:100
+}
+
+.panel,
+.menu-panel{
+position:fixed;
+z-index:101;
+top:0;
+height:100vh;
+background:var(--w);
+transition:.3s;
+display:flex;
+flex-direction:column
+}
+
+.panel{
+right:-430px;
+width:410px;
+max-width:94%
+}
+
+.menu-panel{
+left:-430px;
+width:360px;
+max-width:90%;
+box-shadow:8px 0 30px #0002
+}
+
+/* OPTION MODAL */
+
+.option-modal{
+display:none;
+position:fixed;
+inset:0;
+background:#0006;
+z-index:200;
+align-items:center;
+justify-content:center;
+padding:20px
+}
+
+.option-box{
+width:min(420px,100%);
+background:var(--w);
+border-radius:22px;
+padding:25px 20px;
+position:relative;
+box-shadow:0 15px 50px #0004
+}
+
+.option-close{
+position:absolute;
+left:15px;
+top:15px;
+width:34px;
+height:34px;
+border:0;
+border-radius:10px;
+background:var(--c2);
+color:var(--g);
+font-size:21px
+}
+
+.option-box h3{
+font-size:20px;
+margin-bottom:3px;
+padding-left:45px
+}
+
+.option-box p{
+font-size:12px;
+color:var(--m);
+margin-bottom:16px
+}
+
+.option-choices{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px
+}
+
+.pick-option{
+border:1px solid var(--b);
+background:var(--c);
+color:var(--g);
+padding:12px 8px;
+border-radius:12px;
+font-weight:bold
+}
+
+.pick-option small{
+display:block;
+color:var(--o);
+font-size:11px;
+margin-top:2px
+}
+
+.pick-option:active{
+background:var(--g);
+color:#fff
+}
+
+/* MENU */
+
+.menu-head{
+padding:22px 18px;
+background:var(--g);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.menu-brand{
+font:900 25px Georgia
+}
+
+.menu-brand small{
+display:block;
+font:11px Tahoma;
+color:var(--gold);
+font-weight:normal
+}
+
+.menu-close{
+border:0;
+background:none;
+color:#fff;
+font-size:30px
+}
+
 .menu-body{padding:14px}
-.menu-btn{width:100%;border:0;background:none;display:flex;align-items:center;gap:13px;padding:15px 13px;border-radius:14px;color:var(--g);font-size:14px;font-weight:bold;text-align:right;margin-bottom:4px}
+
+.menu-btn{
+width:100%;
+border:0;
+background:none;
+display:flex;
+align-items:center;
+gap:13px;
+padding:15px 13px;
+border-radius:14px;
+color:var(--g);
+font-size:14px;
+font-weight:bold;
+text-align:right;
+margin-bottom:4px
+}
+
 .menu-btn:hover{background:var(--c)}
-.menu-icon{width:36px;height:36px;border-radius:11px;background:var(--c2);display:flex;align-items:center;justify-content:center;font-size:19px}
-.menu-divider{height:1px;background:var(--b);margin:10px 5px}
-.menu-note{padding:15px;margin-top:10px;background:var(--c);border-radius:15px;font-size:11px;color:var(--m);text-align:center}
-.panel-head{padding:18px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between}
-.close{border:0;background:var(--c2);border-radius:10px;width:36px;height:36px;font-size:20px}
-.panel-body{flex:1;overflow:auto;padding:18px}
-.cart-item{padding:15px 0;border-bottom:1px solid var(--b)}
-.cart-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.cart-name{font-size:14px;font-weight:bold}
-.cart-option{display:block;color:var(--m);font-size:11px}
-.cart-price{color:var(--o);direction:ltr;font-size:15px}
-.controls{display:flex;align-items:center;gap:10px;margin-top:10px}
-.qty{width:32px;height:32px;border:0;border-radius:9px;background:var(--g);color:#fff;font-size:18px}
-.qty-number{min-width:20px;text-align:center}
-.remove{border:0;background:none;color:var(--o);margin-right:auto;font-size:11px;padding:7px}
-.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;text-align:center;color:var(--m)}
+
+.menu-icon{
+width:36px;
+height:36px;
+border-radius:11px;
+background:var(--c2);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:19px
+}
+
+.menu-divider{
+height:1px;
+background:var(--b);
+margin:10px 5px
+}
+
+.menu-note{
+padding:15px;
+margin-top:10px;
+background:var(--c);
+border-radius:15px;
+font-size:11px;
+color:var(--m);
+text-align:center
+}
+
+/* CART */
+
+.panel-head{
+padding:18px;
+border-bottom:1px solid var(--b);
+display:flex;
+justify-content:space-between
+}
+
+.close{
+border:0;
+background:var(--c2);
+border-radius:10px;
+width:36px;
+height:36px;
+font-size:20px
+}
+
+.panel-body{
+flex:1;
+overflow:auto;
+padding:18px
+}
+
+.cart-item{
+padding:15px 0;
+border-bottom:1px solid var(--b)
+}
+
+.cart-row{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:12px
+}
+
+.cart-name{
+font-size:14px;
+font-weight:bold
+}
+
+.cart-option{
+display:block;
+color:var(--m);
+font-size:11px
+}
+
+.cart-price{
+color:var(--o);
+direction:ltr;
+font-size:15px
+}
+
+.controls{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px
+}
+
+.qty{
+width:32px;
+height:32px;
+border:0;
+border-radius:9px;
+background:var(--g);
+color:#fff;
+font-size:18px
+}
+
+.qty-number{
+min-width:20px;
+text-align:center
+}
+
+.remove{
+border:0;
+background:none;
+color:var(--o);
+margin-right:auto;
+font-size:11px;
+padding:7px
+}
+
+.cart-empty{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:300px;
+text-align:center;
+color:var(--m)
+}
+
 .cart-empty span{font-size:50px}
-.panel-foot{padding:17px;border-top:1px solid var(--b);background:var(--w)}
-.total{display:flex;justify-content:space-between;font-size:19px;font-weight:bold;margin-bottom:12px}
-.checkout{width:100%;border:0;background:var(--o);color:#fff;padding:13px;border-radius:13px;font-weight:bold}
+
+.panel-foot{
+padding:17px;
+border-top:1px solid var(--b);
+background:var(--w)
+}
+
+.total{
+display:flex;
+justify-content:space-between;
+font-size:19px;
+font-weight:bold;
+margin-bottom:12px
+}
+
+.checkout{
+width:100%;
+border:0;
+background:var(--o);
+color:#fff;
+padding:13px;
+border-radius:13px;
+font-weight:bold
+}
+
+/* FORM */
+
 .form{margin-bottom:12px}
-.form label{font-size:12px;font-weight:bold}
-.input{width:100%;border:1px solid var(--b);border-radius:10px;padding:10px;margin-top:4px;outline:0;background:#fff}
-.area{height:65px;resize:none}
-.summary{background:var(--c);padding:12px;border-radius:13px;margin-top:12px}
-.summary-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
-.final{border-top:1px solid var(--b);padding-top:10px;font-weight:bold;font-size:17px}
-footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px}
-.footer-logo{font:28px Georgia;color:var(--gold)}
+
+.form label{
+font-size:12px;
+font-weight:bold
+}
+
+.input{
+width:100%;
+border:1px solid var(--b);
+border-radius:10px;
+padding:10px;
+margin-top:4px;
+outline:0;
+background:#fff
+}
+
+.area{
+height:65px;
+resize:none
+}
+
+.summary{
+background:var(--c);
+padding:12px;
+border-radius:13px;
+margin-top:12px
+}
+
+.summary-row{
+display:flex;
+justify-content:space-between;
+font-size:12px;
+margin-bottom:8px
+}
+
+.final{
+border-top:1px solid var(--b);
+padding-top:10px;
+font-weight:bold;
+font-size:17px
+}
+
+/* FOOTER */
+
+footer{
+background:var(--g);
+color:#fff;
+text-align:center;
+padding:35px 20px 105px;
+margin-top:20px
+}
+
+.footer-logo{
+font:28px Georgia;
+color:var(--gold)
+}
+
+/* TABLET */
 
 @media(max-width:900px){
-.grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
+
+.grid,
+.offer-grid{
+grid-template-columns:repeat(3,1fr)
 }
+
+.hero{
+height:275px
+}
+
+.hero h1{
+font-size:45px
+}
+}
+
+/* MOBILE */
+
 @media(max-width:650px){
-.site-logo{max-height:85px}
-.icons{top:8px}
-.icon{width:40px;height:40px}
-.hero{min-height:370px}
-.hero-text{padding:35px 7%}
-.hero h1{font-size:40px}
-.basket{display:none}
-.grid,.offer-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.name{font-size:12px}
-.price,.new-price{font-size:16px}
-.add{width:32px;height:32px}
-.detail{grid-template-columns:1fr}
-.detail-img,.detail-img img{min-height:300px}
-.detail-info{padding:25px}
-.detail-name{font-size:28px}
-.menu-panel{width:330px}
+
+header{
+position:sticky;
+top:0
+}
+
+.head{
+height:74px
+}
+
+.site-logo{
+width:105px;
+height:62px
+}
+
+.icons{
+top:15px
+}
+
+.icons:first-of-type{right:12px}
+.icons:last-of-type{left:12px}
+
+.icon{
+width:39px;
+height:39px;
+font-size:17px
+}
+
+.search-wrap{
+padding:0 4% 13px
+}
+
+.search{
+height:45px;
+padding:0 15px
+}
+
+.hero-wrap{
+padding:17px 4% 7px
+}
+
+.hero{
+height:260px;
+min-height:260px;
+border-radius:24px
+}
+
+.hero-text{
+padding:25px 7%;
+max-width:100%
+}
+
+.hero-small{
+font-size:11px
+}
+
+.hero h1{
+font-size:35px;
+letter-spacing:-.5px;
+margin:5px 0 12px
+}
+
+.hero p{
+font-size:11px;
+max-width:290px;
+margin-bottom:15px
+}
+
+.hero button{
+padding:10px 18px;
+font-size:11px
+}
+
+.hero:after{
+left:18px;
+top:18px;
+font-size:13px
+}
+
+.section{
+padding:20px 4% 115px
+}
+
+.title{
+margin-bottom:12px
+}
+
+.title h2{
+font-size:25px
+}
+
+.title p{
+font-size:11px
+}
+
+.categories{
+margin-bottom:9px
+}
+
+.categories button{
+padding:7px 13px;
+font-size:10px
+}
+
+.grid,
+.offer-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:9px
+}
+
+.card,
+.offer-card{
+border-radius:17px
+}
+
+.pic{
+margin:7px;
+border-radius:13px
+}
+
+.info{
+padding:5px 9px 11px
+}
+
+.badge,
+.offer-badge{
+font-size:7.5px;
+padding:3px 7px
+}
+
+.name{
+font-size:11.5px;
+line-height:1.4
+}
+
+.en{
+font-size:7.5px
+}
+
+.weight{
+font-size:8.5px
+}
+
+.price,
+.new-price{
+font-size:15px
+}
+
+.old-price{
+font-size:9px
+}
+
+.discount{
+font-size:7px
+}
+
+.add{
+width:30px;
+height:30px;
+font-size:15px
+}
+
+.fav{
+width:30px;
+height:30px;
+top:11px;
+left:11px;
+font-size:16px
+}
+
+.offer-title h2{
+font-size:21px
+}
+
+.offer-title span{
+font-size:9px
+}
+
+.detail{
+grid-template-columns:1fr;
+border-radius:20px
+}
+
+.detail-img,
+.detail-img img{
+min-height:280px
+}
+
+.detail-info{
+padding:23px
+}
+
+.detail-name{
+font-size:26px
+}
+
+.detail-price{
+font-size:27px
+}
+
+.menu-panel{
+width:325px
+}
+
+.bottom-nav{
+bottom:9px;
+width:94%;
+border-radius:23px;
+padding:5px 6px
+}
+
+.bottom-nav button{
+min-width:58px;
+font-size:8px
+}
+
+.bottom-nav span{
+font-size:18px
+}
+
+footer{
+padding-bottom:100px
+}
+}
+
+/* VERY SMALL PHONES */
+
+@media(max-width:370px){
+
+.site-logo{
+width:95px
+}
+
+.icon{
+width:36px;
+height:36px
+}
+
+.icons{
+top:17px
+}
+
+.hero{
+height:250px;
+min-height:250px
+}
+
+.hero h1{
+font-size:31px
+}
+
+.hero p{
+font-size:10px
+}
+
+.name{
+font-size:11px
+}
 }
 </style>
 </head>
@@ -175,24 +1303,34 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px}
 
 <header>
 <div class="head">
+
 <a class="logo-home" href="#" onclick="home();return false"></a>
-<img src="./tekram-logo.png" alt="تِكرَم | Tekram" class="site-logo">
+
+<img src="./tekram-logo.png"
+alt="تِكرَم | Tekram"
+class="site-logo">
 
 <div class="icons">
-<button class="icon cart-top" onclick="openCart()">🛒<b id="count" class="count">0</b></button>
+<button class="icon cart-top" onclick="openCart()">
+🛒
+<b id="count" class="count">0</b>
+</button>
 </div>
 
 <div class="icons">
 <button class="icon" onclick="focusSearch()">⌕</button>
 <button class="icon" onclick="openMenu()">☰</button>
 </div>
+
 </div>
 </header>
 
 <div class="search-wrap">
 <div class="search">
 <span>⌕</span>
-<input id="search" placeholder="إبحث عن منتج..." oninput="render()">
+<input id="search"
+placeholder="إبحث عن منتج..."
+oninput="render()">
 </div>
 </div>
 
@@ -200,134 +1338,245 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px}
 
 <section class="hero-wrap">
 <div class="hero">
+
 <div class="hero-text">
-<div class="hero-small">✦ من بيتنا لبيتك</div>
-<h1>كل احتياجاتك اليومية<br><span>بمكان واحد.</span></h1>
-<p>منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.</p>
-<button onclick="scrollProducts()">تصفح المنتجات</button>
+
+<div class="hero-small">
+✦ من بيتنا لبيتك
 </div>
-<div class="basket"><i class="i1"></i><i class="i2"></i><i class="i3"></i></div>
+
+<h1>
+كل احتياجاتك اليومية
+<br>
+<span>بمكان واحد.</span>
+</h1>
+
+<p>
+منتجات مختارة بعناية من بيتنا لبيتك، بأسعار واضحة وتوصيل قريب.
+</p>
+
+<button onclick="scrollProducts()">
+تصفّح المنتجات
+</button>
+
+</div>
+
 </div>
 </section>
 
 <section id="offersSection">
+
 <div class="offer-title">
+
 <div>
 <div class="line"></div>
 <h2>🔥 عروض تِكرَم</h2>
 </div>
+
 <span>وفّر أكتر مع تِكرَم</span>
+
 </div>
+
 <div id="offerGrid" class="offer-grid"></div>
+
 </section>
 
 <section class="section" id="products">
+
 <div class="title">
+
 <div class="line"></div>
+
 <h2 id="title">منتجاتنا</h2>
+
 <p id="sub">اختيارات من تِكرَم</p>
+
 </div>
+
 <div id="cats" class="categories"></div>
+
 <div id="grid" class="grid"></div>
+
 </section>
 
 </main>
 
 <section id="productPage">
+
 <div class="detail">
+
 <div id="dimg" class="detail-img"></div>
 
 <div class="detail-info">
+
 <div id="dcat" class="detail-cat"></div>
+
 <div id="dname" class="detail-name"></div>
+
 <div id="den" class="detail-en"></div>
+
 <div id="options" class="options"></div>
+
 <div id="dweight"></div>
+
 <div id="doldprice" class="detail-old-price"></div>
+
 <div id="dprice" class="detail-price"></div>
+
 <div id="ddesc" class="detail-desc"></div>
 
-<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
-<button class="back" onclick="home()">← العودة</button>
+<button class="detail-add" onclick="addSelected()">
+🛒 أضف للسلة
+</button>
+
+<button class="back" onclick="home()">
+← العودة
+</button>
+
 </div>
 </div>
+
 </section>
 
-<div id="overlay" class="overlay" onclick="closePanels()"></div>
+<div id="overlay"
+class="overlay"
+onclick="closePanels()"></div>
 
-<!-- نافذة اختيار الخيار -->
-<div id="optionModal" class="option-modal" onclick="if(event.target===this)closeOptionPicker()">
+<div id="optionModal"
+class="option-modal"
+onclick="if(event.target===this)closeOptionPicker()">
+
 <div class="option-box">
-<button class="option-close" onclick="closeOptionPicker()">×</button>
+
+<button class="option-close"
+onclick="closeOptionPicker()">×</button>
+
 <h3 id="optionTitle">اختاري النوع</h3>
+
 <p>حدد طلبك</p>
-<div id="optionChoices" class="option-choices"></div>
+
+<div id="optionChoices"
+class="option-choices"></div>
+
 </div>
 </div>
 
 <div id="menuPanel" class="menu-panel">
 
 <div class="menu-head">
-<div class="menu-brand">TEKRAM<small>من بيتنا لبيتك</small></div>
-<button class="menu-close" onclick="closePanels()">×</button>
+
+<div class="menu-brand">
+TEKRAM
+<small>من بيتنا لبيتك</small>
+</div>
+
+<button class="menu-close"
+onclick="closePanels()">×</button>
+
 </div>
 
 <div class="menu-body">
-<button class="menu-btn" onclick="menuHome()"><span class="menu-icon">🏠</span>الرئيسية</button>
-<button class="menu-btn" onclick="menuProducts()"><span class="menu-icon">🛍️</span>المنتجات</button>
-<button class="menu-btn" onclick="menuOffers()"><span class="menu-icon">🔥</span>العروض</button>
-<button class="menu-btn" onclick="menuFavorites()"><span class="menu-icon">❤️</span>المفضلة</button>
-<button class="menu-btn" onclick="menuCart()"><span class="menu-icon">🛒</span>سلة المشتريات</button>
+
+<button class="menu-btn" onclick="menuHome()">
+<span class="menu-icon">🏠</span>
+الرئيسية
+</button>
+
+<button class="menu-btn" onclick="menuProducts()">
+<span class="menu-icon">🛍️</span>
+المنتجات
+</button>
+
+<button class="menu-btn" onclick="menuOffers()">
+<span class="menu-icon">🔥</span>
+العروض
+</button>
+
+<button class="menu-btn" onclick="menuFavorites()">
+<span class="menu-icon">❤️</span>
+المفضلة
+</button>
+
+<button class="menu-btn" onclick="menuCart()">
+<span class="menu-icon">🛒</span>
+سلة المشتريات
+</button>
 
 <div class="menu-divider"></div>
 
 <div class="menu-note">
-تِكرَم 🤍<br>
+تِكرَم 🤍
+<br>
 من بيتنا لبيتك
 </div>
+
 </div>
 </div>
 
 <div id="cartPanel" class="panel">
+
 <div class="panel-head">
+
 <h2>🛒 السلة</h2>
-<button class="close" onclick="closePanels()">×</button>
+
+<button class="close"
+onclick="closePanels()">×</button>
+
 </div>
 
 <div id="cartBody" class="panel-body"></div>
 
 <div class="panel-foot">
+
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+
+<button class="checkout"
+onclick="checkout()">
+إتمام الطلب
+</button>
+
 </div>
 </div>
 
 <div id="checkoutPanel" class="panel">
 
 <div class="panel-head">
+
 <h2>📦 إتمام الطلب</h2>
-<button class="close" onclick="closePanels()">×</button>
+
+<button class="close"
+onclick="closePanels()">×</button>
+
 </div>
 
 <div class="panel-body">
 
 <div class="form">
 <label>الاسم</label>
-<input id="name" class="input" placeholder="اكتب اسمك">
+<input id="name"
+class="input"
+placeholder="اكتب اسمك">
 </div>
 
 <div class="form">
 <label>رقم الهاتف</label>
-<input id="phone" class="input" placeholder="03 123 456">
+<input id="phone"
+class="input"
+placeholder="03 123 456">
 </div>
 
 <div class="form">
 <label>المنطقة</label>
+
 <select id="area" class="input">
-<option value="">اختر منطقة التوصيل</option>
+
+<option value="">
+اختر منطقة التوصيل
+</option>
+
 <option>صور</option>
 <option>المعشوق</option>
 <option>برج الشمالي</option>
@@ -335,40 +1584,77 @@ footer{background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px}
 <option>الحوش</option>
 <option>العباسية</option>
 <option>البازورية</option>
+
 </select>
 </div>
 
 <div class="form">
 <label>العنوان</label>
-<textarea id="address" class="input area" placeholder="اكتب العنوان"></textarea>
+
+<textarea id="address"
+class="input area"
+placeholder="اكتب العنوان"></textarea>
 </div>
 
 <div class="form">
 <label>ملاحظات</label>
-<textarea id="notes" class="input area" placeholder="اختياري"></textarea>
+
+<textarea id="notes"
+class="input area"
+placeholder="اختياري"></textarea>
 </div>
 
 <div id="summary" class="summary"></div>
+
 </div>
 
 <div class="panel-foot">
-<button id="send" class="checkout" onclick="sendOrder()">تأكيد الطلب ✓</button>
+
+<button id="send"
+class="checkout"
+onclick="sendOrder()">
+تأكيد الطلب ✓
+</button>
+
 </div>
 </div>
 
 <div class="bottom-nav">
-<button onclick="home()" class="active"><span>⌂</span>الرئيسية</button>
-<button onclick="categoriesPage()"><span>▦</span>الأقسام</button>
-<button onclick="favoritesPage()"><span>♡</span>المفضلة</button>
-<button onclick="openCart()"><span>🛒</span>السلة</button>
+
+<button onclick="home()" class="active">
+<span>⌂</span>
+الرئيسية
+</button>
+
+<button onclick="categoriesPage()">
+<span>▦</span>
+الأقسام
+</button>
+
+<button onclick="favoritesPage()">
+<span>♡</span>
+المفضلة
+</button>
+
+<button onclick="openCart()">
+<span>🛒</span>
+السلة
+</button>
+
 </div>
 
 <footer>
-<div class="footer-logo">تِكرَم</div>
+
+<div class="footer-logo">
+تِكرَم
+</div>
+
 <p>من بيتنا لبيتك 🤍</p>
+
 </footer>
 
 <script>
+
 const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",
 DELIVERY=2;
 
@@ -383,6 +1669,7 @@ const cats=[
 ];
 
 const products=[
+
 {id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",options:[
 ["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],
 ["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]
@@ -403,11 +1690,10 @@ const products=[
 ["1.5 كغ",11.5,""]
 ]},
 
-
 {id:"greek",cat:"ألبان وأجبان",name:"يوغرت تعنايل غريك",en:"Taanayel Greek Yogurt",price:1.25,weight:"سادة / فريز / توت / دراق",img:"./Taanyel-greek-yogurt-strawberry.JPG",options:[
 ["سادة",1.25,"./Taanyel-greek-yogurt-plain.JPG"],
 ["فريز",1.25,"./Taanyel-greek-yogurt-strawberry.JPG"],
-["توت",1.25,"./Taanyel-greek-yogurt-bluberry.JPG"],
+["توت",1.25,"./Taanyel-greek-yogurt-bluberry.JPG"]
 ]},
 
 {id:"corn",cat:"مواد غذائية",name:"ذرة حلوة لا بيلا",en:"La Bella Sweet Corn",price:.85,weight:"340 غ",img:"./la-bella-sweet-corn-340g.JPG"},
@@ -517,6 +1803,7 @@ const products=[
 {id:"freshdays-long-72pcs",cat:"عناية شخصية",name:"فريش دايز طويل",en:"Freshdays Long",price:4.45,weight:"72 حبة",img:"./freshdays-long-72pcs.JPG"},
 
 {id:"upm-light-fork-50pcs",cat:"بلاستيك",name:"شوك بلاستيك UPM Light",en:"UPM Light Forks",price:.55,weight:"50 حبة",img:"./upm-light-fork-50pcs.JPG"}
+
 ];
 
 let cart=JSON.parse(localStorage.getItem("tekramCart")||"[]"),
@@ -539,11 +1826,15 @@ $("search").focus()
 }
 
 function nav(n){
-document.querySelectorAll(".bottom-nav button").forEach((x,i)=>x.classList.toggle("active",i===n))
+document.querySelectorAll(".bottom-nav button")
+.forEach((x,i)=>x.classList.toggle("active",i===n))
 }
 
 function categoriesHTML(){
-$("cats").innerHTML=cats.map(x=>`<button class="${x===category&&!onlyFav?"active":""}" onclick="choose('${x}')">${x}</button>`).join("")
+$("cats").innerHTML=cats.map(x=>
+`<button class="${x===category&&!onlyFav?"active":""}"
+onclick="choose('${x}')">${x}</button>`
+).join("")
 }
 
 function discountPercent(a,b){
@@ -557,53 +1848,103 @@ return p.oldPrice
 }
 
 function card(p){
+
 let f=fav.includes(p.id);
 
-return `<div class="card" onclick="detail('${p.id}')">
-<button class="fav ${f?"on":""}" onclick="toggleFav(event,'${p.id}')">${f?"♥":"♡"}</button>
+return `
+<div class="card" onclick="detail('${p.id}')">
 
-<div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div>
+<button class="fav ${f?"on":""}"
+onclick="toggleFav(event,'${p.id}')">
+${f?"♥":"♡"}
+</button>
+
+<div class="pic">
+${p.img
+?`<img src="${p.img}" alt="${p.name}">`
+:p.icon||"🛒"}
+</div>
 
 <div class="info">
+
 <span class="badge">${p.cat}</span>
-${p.oldPrice?`<span class="offer-badge">🔥 عرض</span>`:""}
+
+${p.oldPrice
+?`<span class="offer-badge">🔥 عرض</span>`
+:""}
+
 <div class="name">${p.name}</div>
+
 <div class="en">${p.en}</div>
+
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
-<div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<div>
+${priceHTML(p)}
+</div>
+
+<button class="add"
+onclick="quick(event,'${p.id}')">
++
+</button>
+
 </div>
 </div>
 </div>`
 }
 
 function offerCard(p){
-return `<div class="offer-card" onclick="detail('${p.id}')">
-<div class="offer-label">🔥 عرض</div>
-<div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}</div>
+
+return `
+<div class="offer-card"
+onclick="detail('${p.id}')">
+
+<div class="offer-label">
+🔥 عرض
+</div>
+
+<div class="pic">
+${p.img
+?`<img src="${p.img}" alt="${p.name}">`
+:p.icon||"🛒"}
+</div>
 
 <div class="info">
+
 <div class="name">${p.name}</div>
+
 <div class="en">${p.en}</div>
+
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<button class="add"
+onclick="quick(event,'${p.id}')">
++
+</button>
+
 </div>
 </div>
 </div>`
 }
 
 function renderOffers(){
+
 let o=products.filter(p=>p.oldPrice);
+
 $("offersSection").style.display=o.length?"block":"none";
-if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")
+
+if(o.length)
+$("offerGrid").innerHTML=o.map(offerCard).join("")
 }
 
 function render(){
+
 let q=$("search").value.trim().toLowerCase();
 
 let list=products.filter(p=>
@@ -612,9 +1953,13 @@ let list=products.filter(p=>
 (!q||(p.name+" "+p.en).toLowerCase().includes(q))
 );
 
-$("title").textContent=onlyFav?"المفضلة":q?"نتائج البحث":category==="الكل"?"منتجاتنا":category;
+$("title").textContent=
+onlyFav?"المفضلة":
+q?"نتائج البحث":
+category==="الكل"?"منتجاتنا":category;
 
-$("sub").textContent=onlyFav
+$("sub").textContent=
+onlyFav
 ?"المنتجات التي حفظتها ❤️"
 :"اختيارات من تِكرَم";
 
@@ -643,34 +1988,44 @@ setTimeout(scrollProducts,50)
 }
 
 function favoritesPage(){
+
 category="الكل";
 onlyFav=true;
+
 $("productPage").style.display="none";
 $("homePage").style.display="block";
+
 render();
 nav(2);
 scrollProducts()
 }
 
 function toggleFav(e,id){
+
 e.stopPropagation();
-fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];
+
+fav=fav.includes(id)
+?fav.filter(x=>x!==id)
+:[...fav,id];
+
 save();
 render()
 }
 
-/* التعديل الأساسي */
 function quick(e,id){
+
 e.stopPropagation();
 
 let p=products.find(x=>x.id===id);
 
 if(!p.options){
+
 add({
 name:p.name,
 option:p.weight,
 price:p.price
 });
+
 openCart();
 return
 }
@@ -679,10 +2034,12 @@ openOptionPicker(p)
 }
 
 function openOptionPicker(p){
+
 $("optionTitle").textContent=p.name;
 
 $("optionChoices").innerHTML=p.options.map((o,i)=>
-`<button class="pick-option" onclick="pickOption('${p.id}',${i})">
+`<button class="pick-option"
+onclick="pickOption('${p.id}',${i})">
 ${o[0]}
 <small>$${o[1].toFixed(2)}</small>
 </button>`
@@ -692,6 +2049,7 @@ $("optionModal").style.display="flex"
 }
 
 function pickOption(id,i){
+
 let p=products.find(x=>x.id===id),
 o=p.options[i];
 
@@ -710,6 +2068,7 @@ $("optionModal").style.display="none"
 }
 
 function detail(id,opt=0){
+
 let p=products.find(x=>x.id===id),
 o=p.options?p.options[opt]:[p.weight,p.price,p.img||p.icon||""];
 
@@ -739,7 +2098,10 @@ typeof o[2]==="string"&&o[2].startsWith(".")
 
 $("options").innerHTML=p.options
 ?p.options.map((x,i)=>
-`<button class="option ${i===opt?"sel":""}" onclick="detail('${p.id}',${i})">${x[0]}</button>`
+`<button class="option ${i===opt?"sel":""}"
+onclick="detail('${p.id}',${i})">
+${x[0]}
+</button>`
 ).join("")
 :"";
 
@@ -750,8 +2112,15 @@ window.scrollTo(0,0)
 }
 
 function add(x){
-let o=cart.find(i=>i.name===x.name&&i.option===x.option);
-o?o.qty++:cart.push({...x,qty:1});
+
+let o=cart.find(i=>
+i.name===x.name&&i.option===x.option
+);
+
+o
+?o.qty++
+:cart.push({...x,qty:1});
+
 save();
 updateCart()
 }
@@ -762,31 +2131,73 @@ openCart()
 }
 
 function updateCart(){
-$("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
+
+$("count").textContent=
+cart.reduce((a,x)=>a+x.qty,0);
 
 if(!cart.length){
-$("cartBody").innerHTML=`<div class="cart-empty"><span>🛒</span>السلة فارغة<small>أضف منتجاتك المفضلة من تِكرَم 🤍</small></div>`;
+
+$("cartBody").innerHTML=`
+<div class="cart-empty">
+<span>🛒</span>
+السلة فارغة
+<small>أضف منتجاتك المفضلة من تِكرَم 🤍</small>
+</div>`;
+
 $("total").textContent="$0.00";
+
 return
 }
 
 $("cartBody").innerHTML=cart.map((x,i)=>
-`<div class="cart-item">
+`
+<div class="cart-item">
+
 <div class="cart-row">
+
 <div>
-<div class="cart-name">${x.name}</div>
-<span class="cart-option">${x.option}</span>
+
+<div class="cart-name">
+${x.name}
 </div>
-<b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b>
+
+<span class="cart-option">
+${x.option}
+</span>
+
+</div>
+
+<b class="cart-price">
+$${(x.price*x.qty).toFixed(2)}
+</b>
+
 </div>
 
 <div class="controls">
-<button class="qty" onclick="qty(${i},-1)">−</button>
-<b class="qty-number">${x.qty}</b>
-<button class="qty" onclick="qty(${i},1)">+</button>
-<button class="remove" onclick="removeItem(${i})">حذف</button>
+
+<button class="qty"
+onclick="qty(${i},-1)">
+−
+</button>
+
+<b class="qty-number">
+${x.qty}
+</b>
+
+<button class="qty"
+onclick="qty(${i},1)">
++
+</button>
+
+<button class="remove"
+onclick="removeItem(${i})">
+حذف
+</button>
+
 </div>
-</div>`
+
+</div>
+`
 ).join("");
 
 $("total").textContent="$"+
@@ -794,27 +2205,37 @@ cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
 }
 
 function qty(i,n){
+
 cart[i].qty+=n;
-if(cart[i].qty<1)cart.splice(i,1);
+
+if(cart[i].qty<1)
+cart.splice(i,1);
+
 save();
 updateCart()
 }
 
 function removeItem(i){
+
 cart.splice(i,1);
 save();
 updateCart()
 }
 
 function openCart(){
+
 closePanels();
+
 $("cartPanel").style.right="0";
 $("overlay").style.display="block";
+
 nav(3)
 }
 
 function checkout(){
-if(!cart.length)return alert("السلة فارغة");
+
+if(!cart.length)
+return alert("السلة فارغة");
 
 closePanels();
 
@@ -824,19 +2245,45 @@ $("overlay").style.display="block";
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
 
 $("summary").innerHTML=
+
 cart.map(x=>
-`<div class="summary-row">
-<span>${x.name}<br><small>${x.option} × ${x.qty}</small></span>
-<b>$${(x.price*x.qty).toFixed(2)}</b>
-</div>`
+`
+<div class="summary-row">
+
+<span>
+${x.name}
+<br>
+<small>${x.option} × ${x.qty}</small>
+</span>
+
+<b>
+$${(x.price*x.qty).toFixed(2)}
+</b>
+
+</div>
+`
 ).join("")+
 
-`<div class="summary-row"><b>المجموع الفرعي</b><b>$${s.toFixed(2)}</b></div>
-<div class="summary-row"><b>التوصيل</b><b>$${DELIVERY.toFixed(2)}</b></div>
-<div class="summary-row final"><b>المجموع النهائي</b><b>$${(s+DELIVERY).toFixed(2)}</b></div>`
+`
+<div class="summary-row">
+<b>المجموع الفرعي</b>
+<b>$${s.toFixed(2)}</b>
+</div>
+
+<div class="summary-row">
+<b>التوصيل</b>
+<b>$${DELIVERY.toFixed(2)}</b>
+</div>
+
+<div class="summary-row final">
+<b>المجموع النهائي</b>
+<b>$${(s+DELIVERY).toFixed(2)}</b>
+</div>
+`
 }
 
 function closePanels(){
+
 $("cartPanel").style.right="-430px";
 $("checkoutPanel").style.right="-430px";
 $("menuPanel").style.left="-430px";
@@ -844,41 +2291,51 @@ $("overlay").style.display="none"
 }
 
 function openMenu(){
+
 closePanels();
+
 $("menuPanel").style.left="0";
 $("overlay").style.display="block"
 }
 
 function menuHome(){
+
 closePanels();
 home()
 }
 
 function menuProducts(){
+
 closePanels();
 home();
+
 setTimeout(scrollProducts,100)
 }
 
 function menuOffers(){
+
 closePanels();
 home();
 
 setTimeout(()=>{
+
 let s=$("offersSection");
 
 s.style.display!=="none"
 ?s.scrollIntoView({behavior:"smooth"})
 :alert("ما في عروض مضافة حاليًا 🔥")
+
 },100)
 }
 
 function menuFavorites(){
+
 closePanels();
 favoritesPage()
 }
 
 function menuCart(){
+
 closePanels();
 openCart()
 }
@@ -904,24 +2361,34 @@ $("send").textContent="جاري الإرسال...";
 
 try{
 
-let r=await fetch("https://api.web3forms.com/submit",{
+let r=await fetch(
+"https://api.web3forms.com/submit",
+{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
 "Accept":"application/json"
 },
 body:JSON.stringify({
+
 access_key:KEY,
+
 subject:"🛒 طلب جديد من تِكرَم",
+
 name:n,
 phone:ph,
 area:ar,
 address:ad,
 notes:$("notes").value,
+
 order,
+
 subtotal:"$"+sub.toFixed(2),
+
 delivery:"$"+DELIVERY.toFixed(2),
+
 total:"$"+(sub+DELIVERY).toFixed(2)
+
 })
 });
 
@@ -932,6 +2399,7 @@ if(data.success){
 alert("تم إرسال طلبك بنجاح ❤️");
 
 cart=[];
+
 save();
 updateCart();
 closePanels();
@@ -943,11 +2411,15 @@ $("address").value="";
 $("notes").value="";
 
 }else{
+
 alert("تعذر إرسال الطلب.")
+
 }
 
 }catch(e){
+
 alert("تعذر إرسال الطلب حالياً.")
+
 }
 
 $("send").disabled=false;
@@ -968,13 +2440,16 @@ nav(0);
 if(tekramBackPosition!==null){
 
 let y=tekramBackPosition;
+
 tekramBackPosition=null;
 
 setTimeout(()=>{
+
 window.scrollTo({
 top:y,
 behavior:"smooth"
 });
+
 },50);
 
 }else{
@@ -988,11 +2463,15 @@ behavior:"smooth"
 }
 
 function scrollProducts(){
-$("products").scrollIntoView({behavior:"smooth"})
+
+$("products").scrollIntoView({
+behavior:"smooth"
+})
 }
 
 categoriesHTML();
 render();
+
 </script>
 
 </body>
