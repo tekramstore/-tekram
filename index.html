@@ -65,9 +65,22 @@ line-height:1.12;margin:10px 0 15px
 border:0;background:var(--o);color:#fff;
 padding:12px 24px;border-radius:25px;font-weight:bold
 }
+
+/* صورة غصن الزيتون */
 .hero-branch{
-font-size:90px;opacity:.9;transform:rotate(-12deg);
-color:var(--gold);margin-left:15px
+position:relative;
+z-index:2;
+width:38%;
+display:flex;
+justify-content:center;
+align-items:center
+}
+.hero-branch img{
+width:100%;
+max-width:360px;
+height:auto;
+display:block;
+object-fit:contain
 }
 
 /* PRODUCTS */
@@ -322,17 +335,29 @@ background:var(--g);color:#fff;text-align:center;padding:40px 20px 110px
 @media(max-width:900px){
 .grid,.offer-grid{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:650px){
 .site-logo{max-height:82px}
 .icons{top:8px}
 .icon{width:40px;height:40px}
 
 .hero{
-min-height:300px;padding:35px 8%;border-radius:25px
+min-height:330px;
+padding:35px 7%;
+border-radius:25px
 }
-.hero h1{font-size:38px}
+
+.hero-text{max-width:58%}
+.hero h1{font-size:32px}
 .hero p{font-size:12px}
-.hero-branch{font-size:60px}
+
+.hero-branch{
+width:38%;
+}
+
+.hero-branch img{
+max-width:220px
+}
 
 .grid,.offer-grid{
 grid-template-columns:repeat(2,1fr);gap:10px
@@ -356,6 +381,7 @@ grid-template-columns:repeat(2,1fr);gap:10px
 <div class="head">
 
 <a class="logo-home" href="#" onclick="home();return false"></a>
+
 <img src="./tekram-logo.png" class="site-logo" alt="تِكرَم">
 
 <div class="icons">
@@ -385,6 +411,7 @@ grid-template-columns:repeat(2,1fr);gap:10px
 <div class="hero">
 
 <div class="hero-text">
+
 <div class="hero-small">✦ من بيتنا لبيتك</div>
 
 <h1>
@@ -395,58 +422,90 @@ grid-template-columns:repeat(2,1fr);gap:10px
 <p>منتجاتك اليومية بأسعار واضحة وتوصيل قريب.</p>
 
 <button onclick="scrollProducts()">تسوّق الآن</button>
+
 </div>
 
-<div class="hero-branch">🌿</div>
+<!-- صورة غصن الزيتون -->
+<div class="hero-branch">
+<img src="./olive-branch.png" alt="غصن الزيتون">
+</div>
 
 </div>
 </section>
 
 <section id="offersSection">
+
 <div class="offer-title">
+
 <div>
 <div class="line"></div>
 <h2>🔥 عروض تِكرَم</h2>
 </div>
+
 <span>وفّر أكتر مع تِكرَم</span>
+
 </div>
+
 <div id="offerGrid" class="offer-grid"></div>
+
 </section>
 
 <section class="section" id="products">
 
 <div class="title">
+
 <div class="line"></div>
+
 <h2 id="title">منتجاتنا</h2>
+
 <p id="sub">اختيارات من تِكرَم</p>
+
 </div>
 
 <div id="cats" class="categories"></div>
+
 <div id="grid" class="grid"></div>
 
 </section>
+
 </main>
 
 <section id="productPage">
+
 <div class="detail">
 
 <div id="dimg" class="detail-img"></div>
 
 <div class="detail-info">
+
 <div id="dcat" class="detail-cat"></div>
+
 <div id="dname" class="detail-name"></div>
+
 <div id="den" class="detail-en"></div>
+
 <div id="options" class="options"></div>
+
 <div id="dweight"></div>
+
 <div id="doldprice" class="detail-old-price"></div>
+
 <div id="dprice" class="detail-price"></div>
+
 <div id="ddesc" class="detail-desc"></div>
 
-<button class="detail-add" onclick="addSelected()">🛒 أضف للسلة</button>
-<button class="back" onclick="home()">← العودة</button>
+<button class="detail-add" onclick="addSelected()">
+🛒 أضف للسلة
+</button>
+
+<button class="back" onclick="home()">
+← العودة
+</button>
+
 </div>
 
 </div>
+
 </section>
 
 <div id="overlay" class="overlay" onclick="closePanels()"></div>
@@ -455,10 +514,15 @@ grid-template-columns:repeat(2,1fr);gap:10px
 onclick="if(event.target===this)closeOptionPicker()">
 
 <div class="option-box">
+
 <button class="option-close" onclick="closeOptionPicker()">×</button>
+
 <h3 id="optionTitle">اختاري النوع</h3>
+
 <p>حدد طلبك</p>
+
 <div id="optionChoices" class="option-choices"></div>
+
 </div>
 
 </div>
@@ -466,33 +530,41 @@ onclick="if(event.target===this)closeOptionPicker()">
 <div id="menuPanel" class="menu-panel">
 
 <div class="menu-head">
+
 <div class="menu-brand">
 TEKRAM
 <small>من بيتنا لبيتك</small>
 </div>
+
 <button class="menu-close" onclick="closePanels()">×</button>
+
 </div>
 
 <div class="menu-body">
 
 <button class="menu-btn" onclick="menuHome()">
-<span class="menu-icon">🏠</span>الرئيسية
+<span class="menu-icon">🏠</span>
+الرئيسية
 </button>
 
 <button class="menu-btn" onclick="menuProducts()">
-<span class="menu-icon">🛍️</span>المنتجات
+<span class="menu-icon">🛍️</span>
+المنتجات
 </button>
 
 <button class="menu-btn" onclick="menuOffers()">
-<span class="menu-icon">🔥</span>العروض
+<span class="menu-icon">🔥</span>
+العروض
 </button>
 
 <button class="menu-btn" onclick="menuFavorites()">
-<span class="menu-icon">❤️</span>المفضلة
+<span class="menu-icon">❤️</span>
+المفضلة
 </button>
 
 <button class="menu-btn" onclick="menuCart()">
-<span class="menu-icon">🛒</span>سلة المشتريات
+<span class="menu-icon">🛒</span>
+سلة المشتريات
 </button>
 
 <div class="menu-divider"></div>
@@ -515,11 +587,16 @@ TEKRAM
 <div id="cartBody" class="panel-body"></div>
 
 <div class="panel-foot">
+
 <div class="total">
 <span>المجموع</span>
 <span id="total">$0.00</span>
 </div>
-<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+
+<button class="checkout" onclick="checkout()">
+إتمام الطلب
+</button>
+
 </div>
 
 </div>
@@ -527,8 +604,11 @@ TEKRAM
 <div id="checkoutPanel" class="panel">
 
 <div class="panel-head">
+
 <h2>📦 إتمام الطلب</h2>
+
 <button class="close" onclick="closePanels()">×</button>
+
 </div>
 
 <div class="panel-body">
@@ -544,9 +624,11 @@ TEKRAM
 </div>
 
 <div class="form">
+
 <label>المنطقة</label>
 
 <select id="area" class="input">
+
 <option value="">اختر منطقة التوصيل</option>
 <option>صور</option>
 <option>المعشوق</option>
@@ -555,20 +637,29 @@ TEKRAM
 <option>الحوش</option>
 <option>العباسية</option>
 <option>البازورية</option>
+
 </select>
 
 </div>
 
 <div class="form">
+
 <label>العنوان</label>
-<textarea id="address" class="input area"
+
+<textarea id="address"
+class="input area"
 placeholder="اكتب العنوان"></textarea>
+
 </div>
 
 <div class="form">
+
 <label>ملاحظات</label>
-<textarea id="notes" class="input area"
+
+<textarea id="notes"
+class="input area"
 placeholder="اختياري"></textarea>
+
 </div>
 
 <div id="summary" class="summary"></div>
@@ -576,9 +667,11 @@ placeholder="اختياري"></textarea>
 </div>
 
 <div class="panel-foot">
+
 <button id="send" class="checkout" onclick="sendOrder()">
 تأكيد الطلب ✓
 </button>
+
 </div>
 
 </div>
@@ -604,50 +697,79 @@ placeholder="اختياري"></textarea>
 </div>
 
 <footer>
+
 <div class="footer-logo">تِكرَم</div>
+
 <p>من بيتنا لبيتك 🤍</p>
+
 </footer>
 
 <script>
-const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",DELIVERY=2;
+
+const KEY="9edc6eae-83a6-4858-a452-12860503dcfa",
+DELIVERY=2;
 
 const cats=[
-"الكل","مشروبات","ألبان وأجبان","مواد غذائية",
-"مواد تنظيف","بلاستيك","عناية شخصية"
+"الكل",
+"مشروبات",
+"ألبان وأجبان",
+"مواد غذائية",
+"مواد تنظيف",
+"بلاستيك",
+"عناية شخصية"
 ];
 
 const products=[
 
-{id:"coffee-no",cat:"مشروبات",name:"قهوة نجار دون هال",en:"Najjar Coffee No Cardamom",
-price:3.35,weight:"180 غ / 450 غ",img:"./najjar-coffee-no-cardamom-180g.JPG",
+{id:"coffee-no",cat:"مشروبات",
+name:"قهوة نجار دون هال",
+en:"Najjar Coffee No Cardamom",
+price:3.35,
+weight:"180 غ / 450 غ",
+img:"./najjar-coffee-no-cardamom-180g.JPG",
 options:[
 ["180 غ",3.35,"./najjar-coffee-no-cardamom-180g.JPG"],
 ["450 غ",6.85,"./najjar-coffee-no-cardamom-450g.JPG"]
 ]},
 
-{id:"coffee-card",cat:"مشروبات",name:"قهوة نجار مع هال",en:"Najjar Coffee with Cardamom",
-price:3.55,weight:"180 غ / 450 غ",img:"./najjar-coffee-with-cardamom-180g.JPG",
+{id:"coffee-card",cat:"مشروبات",
+name:"قهوة نجار مع هال",
+en:"Najjar Coffee with Cardamom",
+price:3.55,
+weight:"180 غ / 450 غ",
+img:"./najjar-coffee-with-cardamom-180g.JPG",
 options:[
 ["180 غ",3.55,"./najjar-coffee-with-cardamom-180g.JPG"],
 ["450 غ",7.35,"./najjar-coffee-with-cardamom-450g.JPG"]
 ]},
 
-{id:"coffeemate",cat:"مشروبات",name:"كريمر كوفي ميت",en:"Coffee Mate",
-price:2.5,weight:"450 غ / 1 كغ",img:"./coffee-mate-450g.JPG",
+{id:"coffeemate",cat:"مشروبات",
+name:"كريمر كوفي ميت",
+en:"Coffee Mate",
+price:2.5,
+weight:"450 غ / 1 كغ",
+img:"./coffee-mate-450g.JPG",
 options:[
 ["450 غ",2.5,"./coffee-mate-450g.JPG"],
 ["1 كغ",6,"./Coffee-mate-1kg.JPG"]
 ]},
 
-{id:"ghazal",cat:"ألبان وأجبان",name:"جبنة الغزال",en:"Al Ghazal Cheese",
-price:3,weight:"370 غ / 1.5 كغ",img:"./Ghazal-cheese-370g.png",
+{id:"ghazal",cat:"ألبان وأجبان",
+name:"جبنة الغزال",
+en:"Al Ghazal Cheese",
+price:3,
+weight:"370 غ / 1.5 كغ",
+img:"./Ghazal-cheese-370g.png",
 options:[
 ["370 غ",3,"./Ghazal-cheese-370g.png"],
 ["1.5 كغ",11.5,""]
 ]},
 
-{id:"greek",cat:"ألبان وأجبان",name:"يوغرت تعنايل غريك",en:"Taanayel Greek Yogurt",
-price:1.25,weight:"سادة / فريز / توت / دراق",
+{id:"greek",cat:"ألبان وأجبان",
+name:"يوغرت تعنايل غريك",
+en:"Taanayel Greek Yogurt",
+price:1.25,
+weight:"سادة / فريز / توت / دراق",
 img:"./Taanyel-greek-yogurt-strawberry.JPG",
 options:[
 ["سادة",1.25,"./Taanyel-greek-yogurt-plain.JPG"],
@@ -655,96 +777,157 @@ options:[
 ["توت",1.25,"./Taanyel-greek-yogurt-bluberry.JPG"]
 ]},
 
-{id:"corn",cat:"مواد غذائية",name:"ذرة حلوة لا بيلا",en:"La Bella Sweet Corn",
-price:.85,weight:"340 غ",img:"./la-bella-sweet-corn-340g.JPG"},
+{id:"corn",cat:"مواد غذائية",
+name:"ذرة حلوة لا بيلا",
+en:"La Bella Sweet Corn",
+price:.85,
+weight:"340 غ",
+img:"./la-bella-sweet-corn-340g.JPG"},
 
-{id:"red",cat:"مشروبات",name:"نجار نسكافيه الأحمر",en:"Najjar Red",
-price:3,weight:"95 غ / 190 غ",img:"./najjar-red-95g.JPG",
+{id:"red",cat:"مشروبات",
+name:"نجار نسكافيه الأحمر",
+en:"Najjar Red",
+price:3,
+weight:"95 غ / 190 غ",
+img:"./najjar-red-95g.JPG",
 options:[
 ["95 غ",3,"./najjar-red-95g.JPG"],
 ["190 غ",4.9,"./najjar-red-190g.JPG"]
 ]},
 
-{id:"picon",cat:"ألبان وأجبان",name:"بيكون جبنة",en:"Picon Cheese",
-price:2.5,weight:"×16 / ×24",img:"./Picon-cheese-*16.JPG",
+{id:"picon",cat:"ألبان وأجبان",
+name:"بيكون جبنة",
+en:"Picon Cheese",
+price:2.5,
+weight:"×16 / ×24",
+img:"./Picon-cheese-*16.JPG",
 options:[
 ["×16",2.5,"./Picon-cheese-*16.JPG"],
 ["×24",3,"./Picon-cheese-*24.JPG"]
 ]},
 
-{id:"picon8",cat:"ألبان وأجبان",name:"بيكون سِمبلي ×8",
-en:"Picon Cheese Simply ×8",price:.9,weight:"×8",
+{id:"picon8",cat:"ألبان وأجبان",
+name:"بيكون سِمبلي ×8",
+en:"Picon Cheese Simply ×8",
+price:.9,
+weight:"×8",
 img:"./Picon-cheese-simply-*8.JPG"},
 
-{id:"trobika",cat:"مشروبات",name:"تروبيكا كابتشينو",
-en:"Trobika Cappuccino 20+2",price:4.55,weight:"20 + 2",
+{id:"trobika",cat:"مشروبات",
+name:"تروبيكا كابتشينو",
+en:"Trobika Cappuccino 20+2",
+price:4.55,
+weight:"20 + 2",
 img:"./Trobika-Cappuccino-20+2.JPG"},
 
-{id:"nescafe",cat:"مشروبات",name:"نسكافيه كلاسيك 2 في 1",
-en:"Nescafé Classic 2 in 1",price:5.25,weight:"2 in 1",
+{id:"nescafe",cat:"مشروبات",
+name:"نسكافيه كلاسيك 2 في 1",
+en:"Nescafé Classic 2 in 1",
+price:5.25,
+weight:"2 in 1",
 img:"./Nescafe-classic—2in1.JPG"},
 
-{id:"cream",cat:"ألبان وأجبان",name:"كريمة طبخ نيو بارك",
-en:"New Park Cooking Cream",price:1,weight:"160 مل / 1 لتر",
+{id:"cream",cat:"ألبان وأجبان",
+name:"كريمة طبخ نيو بارك",
+en:"New Park Cooking Cream",
+price:1,
+weight:"160 مل / 1 لتر",
 img:"./New-park-cooking-cream -160ml.JPG",
 options:[
 ["160 مل",1,"./New-park-cooking-cream -160ml.JPG"],
 ["1 لتر",3,"./New-park-cooking-cream -1liter.JPG"]
 ]},
 
-{id:"dollys-pomegranate",cat:"مواد غذائية",name:"دبس رمان دوليز",
-en:"Dollys Pomegranate Molasses",price:2.25,weight:"420 غ",
+{id:"dollys-pomegranate",cat:"مواد غذائية",
+name:"دبس رمان دوليز",
+en:"Dollys Pomegranate Molasses",
+price:2.25,
+weight:"420 غ",
 img:"./Dollys-pomegranate-Molasses-420g.JPG"},
 
-{id:"dollys-ketchup",cat:"مواد غذائية",name:"كاتشب طماطم دوليز",
-en:"Dollys Tomato Ketchup",price:4.5,weight:"2 كغ / 4 كغ",
+{id:"dollys-ketchup",cat:"مواد غذائية",
+name:"كاتشب طماطم دوليز",
+en:"Dollys Tomato Ketchup",
+price:4.5,
+weight:"2 كغ / 4 كغ",
 img:"./Dollys-tomato-ketchup-2kg.JPG",
 options:[
 ["2 كغ",4.5,"./Dollys-tomato-ketchup-2kg.JPG"],
 ["4 كغ",7.7,"./Dollys-tomato-ketchup-4kg.JPG"]
 ]},
 
-{id:"labella-mushrooms",cat:"مواد غذائية",name:"فطر لا بيلا كامل",
-en:"La Bella Whole Mushrooms",price:1.25,weight:"300 غ",
+{id:"labella-mushrooms",cat:"مواد غذائية",
+name:"فطر لا بيلا كامل",
+en:"La Bella Whole Mushrooms",
+price:1.25,
+weight:"300 غ",
 img:"./La-bella-whole-Mushrooms-300g.JPG"},
 
-{id:"larose-rice",cat:"مواد غذائية",name:"الوردة رز مصري",
-en:"La Rose Rouge Egyptian Rice",price:1.85,weight:"900 غ",
+{id:"larose-rice",cat:"مواد غذائية",
+name:"الوردة رز مصري",
+en:"La Rose Rouge Egyptian Rice",
+price:1.85,
+weight:"900 غ",
 img:"./La-Rose-rouge-EGYPTIAN-RICE-900g.JPG"},
 
-{id:"deroni-rice",cat:"مواد غذائية",name:"ديروني رز مصري",
-en:"Deroni Egyptian Rice",price:1,weight:"900 غ",
+{id:"deroni-rice",cat:"مواد غذائية",
+name:"ديروني رز مصري",
+en:"Deroni Egyptian Rice",
+price:1,
+weight:"900 غ",
 img:"./Deroni-Egyptian-rice-900g.JPG"},
 
-{id:"nutella",cat:"مواد غذائية",name:"نوتيلا",en:"Nutella",
-price:7.5,weight:"750 غ",img:"./Nutella-750g.JPG"},
+{id:"nutella",cat:"مواد غذائية",
+name:"نوتيلا",
+en:"Nutella",
+price:7.5,
+weight:"750 غ",
+img:"./Nutella-750g.JPG"},
 
-{id:"uno-choco",cat:"مواد غذائية",name:"اونو شوكو سبريد",
-en:"Uno Choco Spread",price:2,weight:"350 غ",
+{id:"uno-choco",cat:"مواد غذائية",
+name:"اونو شوكو سبريد",
+en:"Uno Choco Spread",
+price:2,
+weight:"350 غ",
 img:"./Uno-choco-spread-350g.JPG"},
 
-{id:"yamama-paste",cat:"مواد غذائية",name:"رب بندورة يمامة",
-en:"Yamama Tomato Paste",price:3.65,weight:"1325 غ",
+{id:"yamama-paste",cat:"مواد غذائية",
+name:"رب بندورة يمامة",
+en:"Yamama Tomato Paste",
+price:3.65,
+weight:"1325 غ",
 img:"./Yamama-tomato-paste-1325g.JPG"},
 
-{id:"zain-sugar",cat:"مواد غذائية",name:"سكر زين ابيض",
-en:"Zain White Sugar",price:.8,weight:"900 غ",
+{id:"zain-sugar",cat:"مواد غذائية",
+name:"سكر زين ابيض",
+en:"Zain White Sugar",
+price:.8,
+weight:"900 غ",
 img:"./Zain-WHITE -SUGAR-900g.JPG"},
 
-{id:"xtra-ketchup",cat:"مواد غذائية",name:"كاتشب Xtra",
-en:"Xtra Ketchup",price:7.8,weight:"4.2 كغ",
+{id:"xtra-ketchup",cat:"مواد غذائية",
+name:"كاتشب Xtra",
+en:"Xtra Ketchup",
+price:7.8,
+weight:"4.2 كغ",
 img:"./Xtra-ketchup-4.2kg.JPG"},
 
-{id:"oxi",cat:"مواد تنظيف",name:"أوكسي سائل جلي",
-en:"Oxi Dishwashing Liquid",price:1.3,weight:"تفاح / ليمون",
+{id:"oxi",cat:"مواد تنظيف",
+name:"أوكسي سائل جلي",
+en:"Oxi Dishwashing Liquid",
+price:1.3,
+weight:"تفاح / ليمون",
 img:"./Oxi-dishwashing-liquid-apple-600ml.JPG",
 options:[
 ["تفاح",1.3,"./Oxi-dishwashing-liquid-apple-600ml.JPG"],
 ["ليمون",1.3,"./Oxi-dishwashing-liquid-lemon-600ml.JPG"]
 ]},
 
-{id:"silkwave",cat:"مواد تنظيف",name:"سيلك ويف معطر غسيل",
-en:"Silkwave Fabric Softener",price:1.3,weight:"1 لتر",
+{id:"silkwave",cat:"مواد تنظيف",
+name:"سيلك ويف معطر غسيل",
+en:"Silkwave Fabric Softener",
+price:1.3,
+weight:"1 لتر",
 img:"./Silkwave-fabric-softener-blue-1liter.JPG",
 options:[
 ["أزرق",1.3,"./Silkwave-fabric-softener-blue-1liter.JPG"],
@@ -754,52 +937,79 @@ options:[
 ["أصفر",1.3,"./Silkwave-fabric-softener-yellow-1liter.JPG"]
 ]},
 
-{id:"sunsilk",cat:"مواد تنظيف",name:"صانسيلك شامبو",
-en:"Sunsilk Shampoo",price:3.2,weight:"600 مل",
+{id:"sunsilk",cat:"مواد تنظيف",
+name:"صانسيلك شامبو",
+en:"Sunsilk Shampoo",
+price:3.2,
+weight:"600 مل",
 img:"./Sunsilk-shampoo-pink-600ml.JPG",
 options:[
 ["زهري",3.2,"./Sunsilk-shampoo-pink-600ml.JPG"],
 ["أصفر",3.2,"./Sunsilk-shampoo-yellow-600ml.JPG"]
 ]},
 
-{id:"my-tomato",cat:"مواد غذائية",name:"ماي توماتو مربى البندورة",
-en:"My Tomato",price:1,weight:"400 غ / 800 غ",
+{id:"my-tomato",cat:"مواد غذائية",
+name:"ماي توماتو مربى البندورة",
+en:"My Tomato",
+price:1,
+weight:"400 غ / 800 غ",
 img:"./My-tomato-400g.JPG",
 options:[
 ["400 غ",1,"./My-tomato-400g.JPG"],
 ["800 غ",1.9,"./My-tomato-800g.JPG"]
 ]},
 
-{id:"noura-shampoo-18",cat:"مواد تنظيف",name:"شامبو نورا",
-en:"Noura Shampoo",price:3.1,weight:"زهري / أزرق - 1.8 لتر",
+{id:"noura-shampoo-18",cat:"مواد تنظيف",
+name:"شامبو نورا",
+en:"Noura Shampoo",
+price:3.1,
+weight:"زهري / أزرق - 1.8 لتر",
 img:"./Noura-shampoo-pink-1.8liter.JPG",
 options:[
 ["زهري - 1.8 لتر",3.1,"./Noura-shampoo-pink-1.8liter.JPG"],
 ["أزرق - 1.8 لتر",3.1,"./Noura-shampoo-blue-1.8liter.JPG"]
 ]},
 
-{id:"spartan-flash",cat:"مواد تنظيف",name:"سبارتان فلاش",
-en:"Spartan Flash",price:2.7,weight:"1 لتر",
+{id:"spartan-flash",cat:"مواد تنظيف",
+name:"سبارتان فلاش",
+en:"Spartan Flash",
+price:2.7,
+weight:"1 لتر",
 img:"./Spartan-flash-1liter.JPG"},
 
-{id:"dimex-javel",cat:"مواد تنظيف",name:"دايمكس جافيل",
-en:"Dimex Javel",price:.75,weight:"1 لتر",
+{id:"dimex-javel",cat:"مواد تنظيف",
+name:"دايمكس جافيل",
+en:"Dimex Javel",
+price:.75,
+weight:"1 لتر",
 img:"./Dimex-javel-1liter.JPG"},
 
-{id:"carmel-javel",cat:"مواد تنظيف",name:"كارمل جافيل",
-en:"Carmel Javel",price:.85,weight:"1 لتر",
+{id:"carmel-javel",cat:"مواد تنظيف",
+name:"كارمل جافيل",
+en:"Carmel Javel",
+price:.85,
+weight:"1 لتر",
 img:"./Carmel-javel-1liter.JPG"},
 
-{id:"clorox",cat:"مواد تنظيف",name:"كلور جافيل كلوروكس",
-en:"Clorox",price:1.3,weight:"1 لتر",
+{id:"clorox",cat:"مواد تنظيف",
+name:"كلور جافيل كلوروكس",
+en:"Clorox",
+price:1.3,
+weight:"1 لتر",
 img:"./Clorox-1liter.JPG"},
 
-{id:"odex",cat:"مواد تنظيف",name:"أوديكس",
-en:"Odex",price:1.5,weight:"1 لتر",
+{id:"odex",cat:"مواد تنظيف",
+name:"أوديكس",
+en:"Odex",
+price:1.5,
+weight:"1 لتر",
 img:"./Odex-1liter.JPG"},
 
-{id:"carmel-cleaner",cat:"مواد تنظيف",name:"كارمل معطر ارض",
-en:"Carmel",price:1.2,weight:"ليمون / صنوبر / عود - 800 مل",
+{id:"carmel-cleaner",cat:"مواد تنظيف",
+name:"كارمل معطر ارض",
+en:"Carmel",
+price:1.2,
+weight:"ليمون / صنوبر / عود - 800 مل",
 img:"./Carmel-lemon-800ml.JPG",
 options:[
 ["ليمون - 800 مل",1.2,"./Carmel-lemon-800ml.JPG"],
@@ -807,42 +1017,67 @@ options:[
 ["عود - 800 مل",1.2,"./Carmel-oud-800ml.JPG"]
 ]},
 
-{id:"noura-shampoo-yellow",cat:"مواد تنظيف",name:"شامبو نورا",
-en:"Noura Shampoo",price:2.4,weight:"1.25 لتر",
+{id:"noura-shampoo-yellow",cat:"مواد تنظيف",
+name:"شامبو نورا",
+en:"Noura Shampoo",
+price:2.4,
+weight:"1.25 لتر",
 img:"./Noura-shampoo-yellow-1.25liter.JPG"},
 
-{id:"novin-plastic-spoons-50pcs",cat:"بلاستيك",name:"ملاعق بلاستيك نوڤين",
-en:"Novin Plastic Spoons",price:.55,weight:"50 حبة",
+{id:"novin-plastic-spoons-50pcs",cat:"بلاستيك",
+name:"ملاعق بلاستيك نوڤين",
+en:"Novin Plastic Spoons",
+price:.55,
+weight:"50 حبة",
 img:"./novin-plastic-spoons-50pcs.JPG"},
 
-{id:"hd-plast-table-covers-roll",cat:"بلاستيك",name:"أغطية طاولات HD Plast",
-en:"HD Plast Table Covers",price:1,weight:"رول",
+{id:"hd-plast-table-covers-roll",cat:"بلاستيك",
+name:"أغطية طاولات HD Plast",
+en:"HD Plast Table Covers",
+price:1,
+weight:"رول",
 img:"./hd-plast-table-covers-roll.JPG"},
 
-{id:"freshdays-normal-72pcs",cat:"عناية شخصية",name:"فريش دايز عادي",
-en:"Freshdays Normal",price:3.9,weight:"72 حبة",
+{id:"freshdays-normal-72pcs",cat:"عناية شخصية",
+name:"فريش دايز عادي",
+en:"Freshdays Normal",
+price:3.9,
+weight:"72 حبة",
 img:"./freshdays-normal-72pcs.JPG"},
 
 {id:"freshdays-normal-scented-72pcs",cat:"عناية شخصية",
-name:"فريش دايز عادي معطر",en:"Freshdays Normal Scented",
-price:3.9,weight:"72 حبة",
+name:"فريش دايز عادي معطر",
+en:"Freshdays Normal Scented",
+price:3.9,
+weight:"72 حبة",
 img:"./freshdays-normal-scented-72pcs.JPG"},
 
 {id:"trama-food-freezer-bags-22x35-100pcs",cat:"بلاستيك",
-name:"أكياس فريزر تراما",en:"Trama Food Freezer Bags",
-price:1,weight:"22×35 سم / 100 حبة",
+name:"أكياس فريزر تراما",
+en:"Trama Food Freezer Bags",
+price:1,
+weight:"22×35 سم / 100 حبة",
 img:"./trama-food-freezer-bags-22x35-100pcs.JPG"},
 
-{id:"relax-maternity-20pcs",cat:"عناية شخصية",name:"فوط أمومة ريلاكس",
-en:"Relax Maternity",price:2.55,weight:"20 حبة",
+{id:"relax-maternity-20pcs",cat:"عناية شخصية",
+name:"فوط أمومة ريلاكس",
+en:"Relax Maternity",
+price:2.55,
+weight:"20 حبة",
 img:"./relax-maternity-20pcs.JPG"},
 
-{id:"freshdays-long-72pcs",cat:"عناية شخصية",name:"فريش دايز طويل",
-en:"Freshdays Long",price:4.45,weight:"72 حبة",
+{id:"freshdays-long-72pcs",cat:"عناية شخصية",
+name:"فريش دايز طويل",
+en:"Freshdays Long",
+price:4.45,
+weight:"72 حبة",
 img:"./freshdays-long-72pcs.JPG"},
 
-{id:"upm-light-fork-50pcs",cat:"بلاستيك",name:"شوك بلاستيك UPM Light",
-en:"UPM Light Forks",price:.55,weight:"50 حبة",
+{id:"upm-light-fork-50pcs",cat:"بلاستيك",
+name:"شوك بلاستيك UPM Light",
+en:"UPM Light Forks",
+price:.55,
+weight:"50 حبة",
 img:"./upm-light-fork-50pcs.JPG"}
 
 ];
@@ -852,6 +1087,7 @@ fav=JSON.parse(localStorage.getItem("tekramFavorites")||"[]"),
 category="الكل",onlyFav=false,selected=null;
 
 let tekramBackPosition=null;
+
 const $=id=>document.getElementById(id);
 
 function save(){
@@ -859,7 +1095,9 @@ localStorage.setItem("tekramCart",JSON.stringify(cart));
 localStorage.setItem("tekramFavorites",JSON.stringify(fav))
 }
 
-function focusSearch(){$("search").focus()}
+function focusSearch(){
+$("search").focus()
+}
 
 function nav(n){
 document.querySelectorAll(".bottom-nav button")
@@ -867,22 +1105,29 @@ document.querySelectorAll(".bottom-nav button")
 }
 
 function categoriesHTML(){
+
 $("cats").innerHTML=cats.map(x=>
 `<button class="${x===category&&!onlyFav?"active":""}"
 onclick="choose('${x}')">${x}</button>`).join("")
+
 }
 
-function discountPercent(a,b){return Math.round((1-b/a)*100)}
+function discountPercent(a,b){
+return Math.round((1-b/a)*100)
+}
 
 function priceHTML(p){
+
 return p.oldPrice
 ?`<span class="old-price">$${p.oldPrice.toFixed(2)}</span>
 <span class="new-price">$${p.price.toFixed(2)}</span>
 <span class="discount">-${discountPercent(p.oldPrice,p.price)}%</span>`
 :`<span class="price">${p.options?"من ":""}$${p.price.toFixed(2)}</span>`
+
 }
 
 function card(p){
+
 let f=fav.includes(p.id);
 
 return `<div class="card" onclick="detail('${p.id}')">
@@ -895,20 +1140,32 @@ ${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 
 <div class="info">
+
 <span class="badge">${p.cat}</span>
+
 <div class="name">${p.name}</div>
+
 <div class="en">${p.en}</div>
+
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<button class="add"
+onclick="quick(event,'${p.id}')">+</button>
+
 </div>
+
 </div>
+
 </div>`
+
 }
 
 function offerCard(p){
+
 return `<div class="offer-card" onclick="detail('${p.id}')">
 
 <div class="offer-label">🔥 عرض</div>
@@ -918,22 +1175,37 @@ ${p.img?`<img src="${p.img}" alt="${p.name}">`:p.icon||"🛒"}
 </div>
 
 <div class="info">
+
 <div class="name">${p.name}</div>
+
 <div class="en">${p.en}</div>
+
 <div class="weight">${p.weight}</div>
 
 <div class="bottom">
+
 <div>${priceHTML(p)}</div>
-<button class="add" onclick="quick(event,'${p.id}')">+</button>
+
+<button class="add"
+onclick="quick(event,'${p.id}')">+</button>
+
 </div>
+
 </div>
+
 </div>`
+
 }
 
 function renderOffers(){
+
 let o=products.filter(p=>p.oldPrice);
+
 $("offersSection").style.display=o.length?"block":"none";
-if(o.length)$("offerGrid").innerHTML=o.map(offerCard).join("")
+
+if(o.length)
+$("offerGrid").innerHTML=o.map(offerCard).join("")
+
 }
 
 function render(){
@@ -958,55 +1230,89 @@ list.map(card).join(""):
 `<div class="empty">ما لقينا منتجات مطابقة ❤️</div>`;
 
 categoriesHTML();
+
 renderOffers();
+
 updateCart()
+
 }
 
 function choose(x){
+
 category=x;
 onlyFav=false;
+
 render();
+
 scrollProducts();
+
 nav(1)
+
 }
 
 function categoriesPage(){
+
 closePanels();
+
 home();
+
 nav(1);
+
 setTimeout(scrollProducts,50)
+
 }
 
 function favoritesPage(){
+
 category="الكل";
 onlyFav=true;
+
 $("productPage").style.display="none";
 $("homePage").style.display="block";
+
 render();
+
 nav(2);
+
 scrollProducts()
+
 }
 
 function toggleFav(e,id){
+
 e.stopPropagation();
+
 fav=fav.includes(id)?
 fav.filter(x=>x!==id):[...fav,id];
+
 save();
+
 render()
+
 }
 
 function quick(e,id){
+
 e.stopPropagation();
 
 let p=products.find(x=>x.id===id);
 
 if(!p.options){
-add({name:p.name,option:p.weight,price:p.price});
+
+add({
+name:p.name,
+option:p.weight,
+price:p.price
+});
+
 openCart();
+
 return
+
 }
 
 openOptionPicker(p)
+
 }
 
 function openOptionPicker(p){
@@ -1020,16 +1326,24 @@ ${o[0]}<small>$${o[1].toFixed(2)}</small>
 </button>`).join("");
 
 $("optionModal").style.display="flex"
+
 }
 
 function pickOption(id,i){
 
-let p=products.find(x=>x.id===id),o=p.options[i];
+let p=products.find(x=>x.id===id),
+o=p.options[i];
 
-add({name:p.name,option:o[0],price:o[1]});
+add({
+name:p.name,
+option:o[0],
+price:o[1]
+});
 
 closeOptionPicker();
+
 openCart()
+
 }
 
 function closeOptionPicker(){
@@ -1039,6 +1353,7 @@ $("optionModal").style.display="none"
 function detail(id,opt=0){
 
 let p=products.find(x=>x.id===id),
+
 o=p.options?p.options[opt]:
 [p.weight,p.price,p.img||p.icon||""];
 
@@ -1046,7 +1361,10 @@ if(tekramBackPosition===null)
 tekramBackPosition=window.scrollY;
 
 selected={
-name:p.name,option:o[0],price:o[1],oldPrice:p.oldPrice||null
+name:p.name,
+option:o[0],
+price:o[1],
+oldPrice:p.oldPrice||null
 };
 
 $("dcat").textContent=p.cat;
@@ -1071,26 +1389,36 @@ $("homePage").style.display="none";
 $("productPage").style.display="block";
 
 window.scrollTo(0,0)
+
 }
 
 function add(x){
 
-let o=cart.find(i=>i.name===x.name&&i.option===x.option);
+let o=cart.find(i=>
+i.name===x.name&&i.option===x.option
+);
 
-o?o.qty++:cart.push({...x,qty:1});
+o?o.qty++:
+cart.push({...x,qty:1});
 
 save();
+
 updateCart()
+
 }
 
 function addSelected(){
+
 add(selected);
+
 openCart()
+
 }
 
 function updateCart(){
 
-$("count").textContent=cart.reduce((a,x)=>a+x.qty,0);
+$("count").textContent=
+cart.reduce((a,x)=>a+x.qty,0);
 
 if(!cart.length){
 
@@ -1102,47 +1430,73 @@ $("cartBody").innerHTML=
 </div>`;
 
 $("total").textContent="$0.00";
+
 return
+
 }
 
 $("cartBody").innerHTML=cart.map((x,i)=>
 `<div class="cart-item">
 
 <div class="cart-row">
+
 <div>
+
 <div class="cart-name">${x.name}</div>
+
 <span class="cart-option">${x.option}</span>
+
 </div>
-<b class="cart-price">$${(x.price*x.qty).toFixed(2)}</b>
+
+<b class="cart-price">
+$${(x.price*x.qty).toFixed(2)}
+</b>
+
 </div>
 
 <div class="controls">
-<button class="qty" onclick="qty(${i},-1)">−</button>
+
+<button class="qty"
+onclick="qty(${i},-1)">−</button>
+
 <b class="qty-number">${x.qty}</b>
-<button class="qty" onclick="qty(${i},1)">+</button>
-<button class="remove" onclick="removeItem(${i})">حذف</button>
+
+<button class="qty"
+onclick="qty(${i},1)">+</button>
+
+<button class="remove"
+onclick="removeItem(${i})">حذف</button>
+
 </div>
 
 </div>`).join("");
 
 $("total").textContent="$"+
 cart.reduce((a,x)=>a+x.price*x.qty,0).toFixed(2)
+
 }
 
 function qty(i,n){
 
 cart[i].qty+=n;
 
-if(cart[i].qty<1)cart.splice(i,1);
+if(cart[i].qty<1)
+cart.splice(i,1);
 
 save();
+
 updateCart()
+
 }
 
 function removeItem(i){
+
 cart.splice(i,1);
+
 save();
+
 updateCart()
+
 }
 
 function openCart(){
@@ -1150,49 +1504,64 @@ function openCart(){
 closePanels();
 
 $("cartPanel").style.right="0";
+
 $("overlay").style.display="block";
 
 nav(3)
+
 }
 
 function checkout(){
 
-if(!cart.length)return alert("السلة فارغة");
+if(!cart.length)
+return alert("السلة فارغة");
 
 closePanels();
 
 $("checkoutPanel").style.right="0";
+
 $("overlay").style.display="block";
 
 let s=cart.reduce((a,x)=>a+x.price*x.qty,0);
 
 $("summary").innerHTML=
+
 cart.map(x=>
 `<div class="summary-row">
-<span>${x.name}<br><small>${x.option} × ${x.qty}</small></span>
+<span>
+${x.name}<br>
+<small>${x.option} × ${x.qty}</small>
+</span>
 <b>$${(x.price*x.qty).toFixed(2)}</b>
 </div>`).join("")+
 
 `<div class="summary-row">
-<b>المجموع الفرعي</b><b>$${s.toFixed(2)}</b>
+<b>المجموع الفرعي</b>
+<b>$${s.toFixed(2)}</b>
 </div>
 
 <div class="summary-row">
-<b>التوصيل</b><b>$${DELIVERY.toFixed(2)}</b>
+<b>التوصيل</b>
+<b>$${DELIVERY.toFixed(2)}</b>
 </div>
 
 <div class="summary-row final">
 <b>المجموع النهائي</b>
 <b>$${(s+DELIVERY).toFixed(2)}</b>
 </div>`
+
 }
 
 function closePanels(){
 
 $("cartPanel").style.right="-430px";
+
 $("checkoutPanel").style.right="-430px";
+
 $("menuPanel").style.left="-430px";
+
 $("overlay").style.display="none"
+
 }
 
 function openMenu(){
@@ -1200,23 +1569,33 @@ function openMenu(){
 closePanels();
 
 $("menuPanel").style.left="0";
+
 $("overlay").style.display="block"
+
 }
 
 function menuHome(){
+
 closePanels();
+
 home()
+
 }
 
 function menuProducts(){
+
 closePanels();
+
 home();
+
 setTimeout(scrollProducts,100)
+
 }
 
 function menuOffers(){
 
 closePanels();
+
 home();
 
 setTimeout(()=>{
@@ -1228,16 +1607,23 @@ s.style.display!=="none"
 :alert("ما في عروض مضافة حاليًا 🔥")
 
 },100)
+
 }
 
 function menuFavorites(){
+
 closePanels();
+
 favoritesPage()
+
 }
 
 function menuCart(){
+
 closePanels();
+
 openCart()
+
 }
 
 async function sendOrder(){
@@ -1257,25 +1643,40 @@ let order=cart.map(x=>
 ).join("\n");
 
 $("send").disabled=true;
+
 $("send").textContent="جاري الإرسال...";
 
 try{
 
-let r=await fetch("https://api.web3forms.com/submit",{
+let r=await fetch(
+"https://api.web3forms.com/submit",
+{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
 "Accept":"application/json"
 },
 body:JSON.stringify({
+
 access_key:KEY,
+
 subject:"🛒 طلب جديد من تِكرَم",
-name:n,phone:ph,area:ar,address:ad,
+
+name:n,
+phone:ph,
+area:ar,
+address:ad,
+
 notes:$("notes").value,
+
 order,
+
 subtotal:"$"+sub.toFixed(2),
+
 delivery:"$"+DELIVERY.toFixed(2),
+
 total:"$"+(sub+DELIVERY).toFixed(2)
+
 })
 });
 
@@ -1286,8 +1687,11 @@ if(data.success){
 alert("تم إرسال طلبك بنجاح ❤️");
 
 cart=[];
+
 save();
+
 updateCart();
+
 closePanels();
 
 $("name").value="";
@@ -1296,48 +1700,73 @@ $("area").value="";
 $("address").value="";
 $("notes").value="";
 
-}else alert("تعذر إرسال الطلب.")
+}else{
+
+alert("تعذر إرسال الطلب.")
+
+}
 
 }catch(e){
+
 alert("تعذر إرسال الطلب حالياً.")
+
 }
 
 $("send").disabled=false;
+
 $("send").textContent="تأكيد الطلب ✓"
+
 }
 
 function home(){
 
 $("productPage").style.display="none";
+
 $("homePage").style.display="block";
 
 category="الكل";
+
 onlyFav=false;
 
 render();
+
 nav(0);
 
 if(tekramBackPosition!==null){
 
 let y=tekramBackPosition;
+
 tekramBackPosition=null;
 
 setTimeout(()=>
-window.scrollTo({top:y,behavior:"smooth"}),50)
+window.scrollTo({
+top:y,
+behavior:"smooth"
+}),50)
 
 }else{
 
-window.scrollTo({top:0,behavior:"smooth"})
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
 
 }
+
 }
 
 function scrollProducts(){
-$("products").scrollIntoView({behavior:"smooth"})
+
+$("products").scrollIntoView({
+behavior:"smooth"
+})
+
 }
 
 categoriesHTML();
+
 render();
+
 </script>
 
 </body>
